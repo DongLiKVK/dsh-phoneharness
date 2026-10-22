@@ -18,8 +18,8 @@
 
 | 文件 | 用途 |
 | --- | --- |
-| [`release/dsh-phone.apk`](release/dsh-phone.apk) | 手机客户端（0.6.26 / versionCode 42），直接安装 |
-| [`release/dsh-phoneharness-0.5.19.tgz`](release/dsh-phoneharness-0.5.19.tgz) | 宿主插件包，`dsh plugin add file:<tgz>` |
+| [`release/dsh-phone-0.6.26.apk`](release/dsh-phone-0.6.26.apk) | 手机客户端 APK `0.6.26`（versionCode 42），直接安装 |
+| [`release/dsh-phoneharness-0.5.20.tgz`](release/dsh-phoneharness-0.5.20.tgz) | 宿主插件包 `0.5.20`，`dsh plugin add file:<tgz>` |
 | [`release/SHA256SUMS`](release/SHA256SUMS) | 两个产物的 SHA-256 |
 
 变更历史见 [CHANGELOG.md](CHANGELOG.md)，本次发布说明见 [release/RELEASE-NOTES.md](release/RELEASE-NOTES.md)。
@@ -48,7 +48,7 @@ dsh plugin --profile <profile> add file:/abs/path/dsh-phoneharness-0.4.1.tgz
 
 接口与冻结签名见 [docs/harness-contract.md](docs/harness-contract.md)，桌面端文案与结构依据见 [docs/harness-desktop-reference.md](docs/harness-desktop-reference.md)，验收过程与证据见 [docs/harness-verification.md](docs/harness-verification.md)（含真机截图与可复跑脚本 `tools/verify-harness.mjs`）。**装完新插件要重启宿主才会生效**：本机实测「只装不重启」时手机端拿到的仍是 `404 not_found「没有这个接口：GET /v1/harness」` —— 取证与升级/重启步骤见 [docs/harness-live-host-probe.md](docs/harness-live-host-probe.md) 与 [docs/harness-host-update.md](docs/harness-host-update.md)。
 
-当前发布：**APK 0.6.26（versionCode 42）/ 插件 0.5.19**，产物在 [`release/`](release/)（APK、插件 tgz、`SHA256SUMS`）。校验一致性请看 `versionName`/`versionCode` 与字节数；`md5` 会随 zip 内嵌时间戳变化，不作为判据。
+当前发布：**APK 0.6.26（versionCode 42）/ 插件 0.5.20**，产物在 [`release/`](release/)（`dsh-phone-0.6.26.apk`、`dsh-phoneharness-0.5.20.tgz`、`SHA256SUMS`）。两者版本号独立演进：APK 走 0.6.x，宿主插件走 0.5.x，Release tag 取插件版本。校验一致性请看 `versionName`/`versionCode` 与字节数；`md5` 会随 zip 内嵌时间戳变化，不作为判据。
 
 ## 文档
 

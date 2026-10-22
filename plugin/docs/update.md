@@ -18,7 +18,7 @@
 
 ```
 dsh-phoneharness-0.4.2.tgz     # 插件（内含 assets/dsh-phone.apk）
-dsh-phone.apk                  # 单独一份 APK，方便直接丢给手机
+dsh-phone-<versionName>.apk    # 单独一份 APK（文件名带 APK 版本），方便直接丢给手机
 ```
 
 **可选通道：npm**
@@ -127,4 +127,4 @@ cd plugin && npm run verify
 2. 改 `plugin/package.json` 的 `version` + `CHANGELOG.md`；
 3. `npm run verify` 通过；
 4. `npm pack --silent` 出 tgz；
-5. Release 上传 tgz + `dsh-phone.apk`，正文粘 CHANGELOG 片段。
+5. Release 上传 tgz + `dsh-phone-<versionName>.apk`（**文件名必须带 APK 版本号**，否则下载下来分不清是哪个版本），正文粘 CHANGELOG 片段。
