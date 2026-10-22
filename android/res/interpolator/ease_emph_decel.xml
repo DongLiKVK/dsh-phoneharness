@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  动效令牌 Motion.EASE_EMPH_DECEL —— 参考的「进」侧强调减速曲线。
+  cubic-bezier(0.0, 0.0, 0.0, 1.0)
+  证据（本机逐行复核）：official/jadx-out/sources/defpackage/mh7.java:16  a = new zza(250, 200, new be3(0.0f, 0.0f, 0.0f, 1.0f))
+  Java 等价实现：Motion.EASE_EMPH_DECEL。
+-->
+<pathInterpolator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:controlX1="0.0"
+    android:controlY1="0.0"
+    android:controlX2="0.0"
+    android:controlY2="1.0" />

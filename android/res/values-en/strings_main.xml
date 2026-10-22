@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English strings for MainActivity (home / drawer / archived / search / batch mode).
+  Source of truth is values/strings_main.xml; keep the same keys and the same
+  placeholder order (%1$d / %1$s).
+-->
+<resources>
+    <!-- Picking images -->
+    <string name="mn_reading_image">Reading image…</string>
+    <string name="mn_image_limit">Up to %1$d images per message</string>
+    <string name="mn_image_unreadable">Could not open this image: %1$s</string>
+
+    <!-- Archived box -->
+    <string name="mn_archive_title">Archive</string>
+    <string name="mn_archive_title_count">Archive · %1$d</string>
+    <string name="mn_empty_archive">Nothing archived yet</string>
+    <string name="mn_empty_archive_remote">No archived chats on this computer yet</string>
+    <string name="mn_empty_workspace">No chats in this workspace yet</string>
+    <string name="mn_archive_confirm_title">Archive this chat?</string>
+    <string name="mn_archive_confirm_message">It leaves the list once archived. You can restore it from Archive.</string>
+    <string name="mn_action_archive">Archive</string>
+    <string name="mn_archive_failed">Archive failed: %1$s</string>
+    <string name="mn_toast_archived">Archived</string>
+
+    <!-- Drawer overflow menu -->
+    <string name="mn_menu_hosts">Online hosts</string>
+    <string name="mn_menu_archive">Archive</string>
+    <string name="mn_menu_refresh">Refresh list</string>
+    <string name="mn_menu_connect">Connection</string>
+    <string name="mn_menu_settings">Settings</string>
+
+    <!-- Workspace chip -->
+    <string name="mn_ws_all">All</string>
+
+    <!-- Batch mode -->
+    <string name="mn_action_pin">Pin</string>
+    <string name="mn_action_delete">Delete</string>
+    <string name="mn_select_first">Select a chat first</string>
+    <string name="mn_delete_batch_title">Delete %1$d chats?</string>
+    <string name="mn_delete_batch_message">They\'ll move to Archive; you can restore them from there.</string>
+    <string name="mn_batch_done">Done</string>
+    <string name="mn_batch_partial">Some failed: %1$s</string>
+
+    <!-- Search page -->
+    <string name="mn_search_hint_empty">Type to search chats</string>
+    <string name="mn_search_no_hit">No matching chats</string>
+    <string name="mn_search_found">%1$d chats found</string>
+
+    <!-- List data states -->
+    <string name="mn_refreshing">Refreshing…</string>
+    <string name="mn_refreshed">Refreshed · %1$d chats</string>
+    <string name="mn_offline_title">Can\'t reach the computer</string>
+    <string name="mn_offline_hint">\nCheck the address and token, or pair again in Connection.</string>
+    <string name="mn_retry">Retry</string>
+
+    <!-- Row actions -->
+    <string name="mn_archive_menu_open">Open</string>
+    <string name="mn_archive_menu_restore">Restore</string>
+    <string name="mn_copy_session_id">Copy chat ID</string>
+    <string name="mn_untitled_session">Chat</string>
+    <string name="mn_toast_pinned">Pinned</string>
+    <string name="mn_toast_unpinned">Unpinned</string>
+    <string name="mn_toast_restored">Restored</string>
+    <string name="mn_op_failed">Action failed: %1$s</string>
+
+    <!-- Rename -->
+    <string name="mn_rename_title">Rename chat</string>
+    <string name="mn_save">Save</string>
+    <string name="mn_cancel">Cancel</string>
+    <string name="mn_title_required">Title is required</string>
+    <string name="mn_toast_renamed">Renamed</string>
+    <string name="mn_rename_failed">Rename failed: %1$s</string>
+
+    <!-- Copy / send -->
+    <string name="mn_toast_copied">Copied</string>
+    <string name="mn_not_connected">Not connected yet. Check the address and token in Connection.</string>
+    <string name="mn_connecting">Connecting to the computer…</string>
+    <string name="mn_no_session_id">The computer returned no chat ID</string>
+    <string name="mn_send_failed">Send failed: %1$s</string>
+    <string name="mn_connect_failed">Can\'t reach the computer: %1$s</string>
+    <string name="mn_action_unpin">Unpin</string>
+    <string name="mn_action_rename">Rename</string>
+    <string name="mn_action_unarchive">Unarchive</string>
+    <string name="mn_group_pinned">Pinned</string>
+</resources>

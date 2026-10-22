@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ChatActivity（会话页：消息气泡 / 思考折叠 / 工具调用条 / 审批条 / 反问卡片 /
+  附件条 / 语音朗读 / Toast）的界面文案。
+  原文全部写死在 ChatActivity.java 里，这里逐字搬运（含空格、… 形状、全角冒号
+  与「，」），作为中文基准；values-en/strings_chat.xml 是对应英文译文。
+  前缀 ch_ = Chat 页接手的那批；带参数的用 %1$s / %1$d。
+  故意没搬的中文（数据比对 / 解析 / 纯标点分隔符）见 official/I18N-chat.md。
+-->
+<resources>
+    <string name="ch_title_fallback">会话</string>
+    <string name="ch_speak_no_reply">还没有可朗读的回复</string>
+    <string name="ch_load_failed_title">打不开这个会话</string>
+    <string name="ch_load_failed_toast">读取会话失败：%1$s</string>
+    <string name="ch_loading_older">正在载入更早的消息…</string>
+    <string name="ch_load_older_failed">载入失败：%1$s</string>
+    <string name="ch_reconnecting">重连中…</string>
+    <string name="ch_status_replying">正在回复…</string>
+    <string name="ch_status_waiting">等你回答</string>
+    <string name="ch_status_failed">出错了</string>
+    <string name="ch_older_count">载入更早的 %1$d 条消息</string>
+    <string name="ch_older_all">载入更早的消息</string>
+    <string name="ch_badge_failed">失败</string>
+    <string name="ch_share_empty">这条没有可分享的文字</string>
+    <string name="ch_share_no_target">没有可用的分享目标</string>
+    <string name="ch_tool_call_one">工具调用 1 次</string>
+    <string name="ch_tool_calls">工具调用 %1$d 次</string>
+    <string name="ch_tool_unknown">工具</string>
+    <string name="ch_expand">展开</string>
+    <string name="ch_collapse">收起</string>
+    <string name="ch_image_loading">图片加载中…</string>
+    <string name="ch_image_failed">图片取不到</string>
+    <string name="ch_close">关闭</string>
+    <string name="ch_report_thanks">已收到举报</string>
+    <string name="ch_edit_no_images">图片没有一起带回输入框，请重新选图</string>
+    <string name="ch_speak_empty">这条没有可朗读的内容</string>
+    <string name="ch_speak_engine_starting">朗读引擎还在准备</string>
+    <string name="ch_tts_code_block">代码块</string>
+    <string name="ch_copy_empty">这条没有可复制的内容</string>
+    <string name="ch_resend_empty">这条没有可重发的内容</string>
+    <string name="ch_resend_running">还在生成中，先等这一轮跑完</string>
+    <string name="ch_resending">正在重发…</string>
+    <string name="ch_resend_image_failed">重发失败，取不到原来的图片：%1$s</string>
+    <string name="ch_copied">已复制</string>
+    <string name="ch_menu_rename">重命名这个会话</string>
+    <string name="ch_menu_refresh">刷新</string>
+    <string name="ch_menu_copy_id">复制会话 ID</string>
+    <string name="ch_rename_title">重命名会话</string>
+    <string name="ch_save">保存</string>
+    <string name="ch_renamed">已重命名</string>
+    <string name="ch_rename_failed">改名失败：%1$s</string>
+    <string name="ch_approval_prefix">要执行 %1$s</string>
+    <string name="ch_approval_allow">允许</string>
+    <string name="ch_approval_deny">拒绝</string>
+    <string name="ch_approval_done">已回应</string>
+    <string name="ch_approval_failed">回应失败：%1$s</string>
+    <string name="ch_question_default">请选择</string>
+    <string name="ch_answer_done">已回答</string>
+    <string name="ch_answer_failed">回答失败：%1$s</string>
+    <string name="ch_image_limit">一条消息最多带 %1$d 张图</string>
+    <string name="ch_reading_image">正在读取图片…</string>
+    <string name="ch_image_unreadable">这张图读不了：%1$s</string>
+    <string name="ch_image_placeholder">图片</string>
+    <string name="ch_send_failed">发送失败：%1$s</string>
+    <string name="ch_interrupted">已打断</string>
+    <string name="ch_interrupt_failed">打断失败：%1$s</string>
+    <string name="ch_regenerate_empty">没有可以重新生成的消息</string>
+    <string name="ch_drawer_title">会话</string>
+    <string name="ch_drawer_new">新对话</string>
+    <string name="ch_speak_no_engine">本机没有可用的朗读引擎</string>
+    <string name="ch_feedback_liked">已点赞</string>
+    <string name="ch_feedback_disliked">已标记为不喜欢</string>
+    <string name="ch_feedback_cleared">已取消反馈</string>
+    <string name="ch_share_copied">没有可分享的应用，已复制到剪贴板</string>
+</resources>

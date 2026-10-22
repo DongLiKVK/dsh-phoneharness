@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  其余几处 UI 文案：Pick.java / Img.java / Api.java / Item.java / App.java。
+  中文是基准语言，这里逐字搬运 Java 里的原文（空格、「」、…、（） 全保留），
+  values-en/strings_misc.xml 是对应英文译文。前缀 misc_。
+  共用：Pick 与 Img 的「这张图是空的」「这张图解不开」文本完全相同——共用一条，改一处两边同步。
+  仍在 Java 里保留的老路径：无 Context 的调用点（见 official/I18N-SMALL.md 的「未落地清单」）。
+-->
+<resources>
+    <!-- 网络层错误（Api.java 抛出，Img.java 也用同一条地址为空） -->
+    <string name="misc_err_no_host">还没填电脑地址</string>
+    <string name="misc_err_not_json">服务端返回的不是 JSON</string>
+    <string name="misc_err_fetch_http">取文件失败 HTTP %1$d</string>
+    <string name="misc_err_unknown">未知错误</string>
+
+    <!-- 选图 / 图片加载（Pick.java, Img.java） -->
+    <string name="misc_pick_unreadable">读不到这张图</string>
+    <string name="misc_pick_unknown_format">这不是一张能识别的图</string>
+    <string name="misc_pick_too_large">这张图压不小，换一张试试</string>
+    <string name="misc_img_empty">这张图是空的</string>
+    <string name="misc_img_decode_failed">这张图解不开</string>
+
+    <!-- 时间线上的状态字（Item.java） -->
+    <string name="misc_item_tool_call">（工具调用）</string>
+    <string name="misc_item_needs_approval">需要批准</string>
+    <string name="misc_item_tool_failed">工具失败</string>
+    <string name="misc_item_tool">工具</string>
+    <string name="misc_item_running">进行中</string>
+
+    <!-- 首页空会话名兜底（App.java 的 SLOGAN） -->
+    <string name="misc_slogan">深水里，聊点真的</string>
+</resources>

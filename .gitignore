@@ -1,0 +1,25 @@
+# 依赖与构建产物
+node_modules/
+android/build/
+android/bin/
+android/tmp-*
+*.bak-*
+*.log
+__pycache__/
+*.pyc
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# 本地资料，不进仓库：本机录屏取证、参考 APK 解包、Android SDK
+/sdk/
+/shots/
+/backup/
+/official/
+/dsh-src/
+
+# Release 目录里的产物是要发布的，别忽略
+!/release/

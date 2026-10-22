@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  动效令牌 Motion.EASE_STANDARD —— 标准曲线，用于没有明确进/出方向的过渡（屏上位移、变形）。
+  cubic-bezier(0.4, 0.0, 0.2, 1.0)
+  证据（两条独立来源同值）：
+    official/apktool-out/res/interpolator/fast_out_slow_in.xml:2
+      android:controlX1="0.4" controlY1="0.0" controlX2="0.2" controlY2="1.0"
+    official/jadx-out/sources/defpackage/z24.java:8
+      public static final be3 a = new be3(0.4f, 0.0f, 0.2f, 1.0f);
+  Java 等价实现：Motion.EASE_STANDARD（Motion.cubicBezier 解析式求解，两侧同值）。
+-->
+<pathInterpolator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:controlX1="0.4"
+    android:controlY1="0.0"
+    android:controlX2="0.2"
+    android:controlY2="1.0" />

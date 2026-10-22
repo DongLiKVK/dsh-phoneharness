@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    选择面板的正文：只为了在 XML 里挂系统选择手柄的 drawable（这几个属性没有运行时 API，
+    只能靠布局属性生效）。其余排版（字号 / 颜色 / 行距）在 SelectSheet 里按主题设置。
+-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textIsSelectable="true"
+    android:textSelectHandle="@drawable/ic_select_handle_end"
+    android:textSelectHandleLeft="@drawable/ic_select_handle_start"
+    android:textSelectHandleRight="@drawable/ic_select_handle_end" />

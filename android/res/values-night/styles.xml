@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 深色：官方 values-night/colors.xml 的 splashscreenBackground=#0f0f0f -->
+    <style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#0F0F0F</item>
+        <item name="android:colorBackground">#0F0F0F</item>
+        <item name="android:statusBarColor">#0F0F0F</item>
+        <item name="android:navigationBarColor">#0F0F0F</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:textColor">#F8F8F8</item>
+        <item name="android:colorAccent">#507BF2</item>
+    </style>
+
+    <style name="AppTheme.Content" parent="@style/AppTheme">
+        <item name="android:windowBackground">@color/page_bg</item>
+    </style>
+</resources>

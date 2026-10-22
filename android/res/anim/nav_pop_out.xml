@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  返回时退场的那一页：向右整屏滑出，同时快速淡出。
+  · 位移 300ms + EASE_STANDARD（bk.java 同组 zzaZ0）。
+  · 淡出 105ms + 延迟 0 + cubic(0.4,0,1,1)=EASE_ACCELERATE
+      official/jadx-out/sources/defpackage/mh7.java:22-23  d = y64.e(k53.Z0(105, 0, z24.c, 2), 2)
+      bk.java:81  ...)).a(mh7.d)  ← 退场过渡挂的就是 mh7.d
+  · 这一页在**上层**，淡出露出的是下层那一页（不透明），所以安全。
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromXDelta="0"
+        android:toXDelta="100%p"
+        android:duration="300"
+        android:interpolator="@interpolator/ease_standard" />
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:duration="105"
+        android:interpolator="@interpolator/ease_accelerate" />
+</set>

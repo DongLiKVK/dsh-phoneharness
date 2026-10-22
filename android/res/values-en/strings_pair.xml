@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English translation of res/values/strings_pair.xml (PairActivity).
+     The Chinese file is the baseline; keys and %n$s placeholders match one-to-one. -->
+<resources>
+    <!-- title + description -->
+    <string name="pr_title">Connect your computer</string>
+    <string name="pr_hint">Phone and computer just need the same WiFi — no Tailscale needed.\nThe pairing code lives in the "Phone remote" panel of the DSH app on your computer; for the address, use your computer LAN IP plus port.</string>
+
+    <!-- form -->
+    <string name="pr_label_host">Computer address</string>
+    <string name="pr_label_code">Pairing code</string>
+    <string name="pr_hint_code">6 digits</string>
+    <string name="pr_connect">Connect</string>
+    <string name="pr_probe">Test connection only</string>
+    <string name="pr_label_presets">Saved addresses</string>
+    <string name="pr_tip_has_token">Already connected to %1$s. Pairing again replaces the old token.</string>
+
+    <!-- status + errors -->
+    <string name="pr_status_pinging">Connecting to %1$s …</string>
+    <string name="pr_status_ok">Connected: %1$s / v%2$s</string>
+    <string name="pr_status_fail">Connection failed: %1$s</string>
+    <string name="pr_status_pairing">Pairing…</string>
+    <string name="pr_status_pair_fail">Pairing failed: %1$s</string>
+    <string name="pr_err_code_len">The pairing code is 6 digits</string>
+    <string name="pr_toast_connected">Connected</string>
+</resources>

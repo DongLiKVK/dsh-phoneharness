@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1775c8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b131c" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="鲸域">
+<meta property="og:title" content="鲸域">
+<meta property="og:description" content="仿 QQ 空间风格的 DSH 开发者社群前端：更新日志流、插件条目库、社群版块、聊天与个人空间。零依赖、无构建、纯静态。">
+<meta name="twitter:card" content="summary">
+<title>鲸域</title>
+<meta name="description" content="鲸域 —— 仿 QQ 空间风格的开发者社群前端：更新日志流、插件条目库、社群版块、聊天与个人空间。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 64 64%27%3E%3Crect width%3D%2764%27 height%3D%2764%27 rx%3D%2715%27 fill%3D%27%231775c8%27%2F%3E%3Cg transform%3D%27rotate(9 32 32)%27%3E%3Cpath d%3D%27M27.1 57.8 C27.3 57.4 28.1 56.2 28.6 55.4 C29.0 54.6 29.4 53.9 29.8 52.9 C30.1 52.0 30.3 51.5 30.8 49.9 C31.2 48.3 32.1 44.8 32.5 43.4 C32.9 42.0 33.0 42.1 33.3 41.6 C33.6 41.0 33.9 40.6 34.2 40.2 C34.6 39.7 35.0 39.3 35.4 39.0 C35.9 38.6 35.1 38.8 36.8 38.0 C38.6 37.3 44.0 35.4 46.0 34.5 C48.0 33.6 48.1 33.4 49.0 32.8 C50.0 32.1 50.7 31.6 51.6 30.8 C52.6 29.9 53.7 28.8 54.6 27.8 C55.4 26.7 56.1 25.7 56.7 24.6 C57.3 23.6 57.8 22.2 58.1 21.5 C58.3 20.7 58.3 20.6 58.3 20.2 C58.3 19.9 58.3 19.5 58.2 19.2 C58.1 19.0 58.0 18.8 57.9 18.7 C57.7 18.5 58.2 18.4 57.1 18.4 C56.1 18.4 53.7 19.0 51.6 18.9 C49.5 18.8 46.2 18.1 44.6 17.9 C42.9 17.7 42.6 17.7 41.6 17.8 C40.6 17.8 40.0 17.8 38.6 18.1 C37.3 18.4 34.8 19.4 33.7 19.7 C32.7 20.0 32.7 19.8 32.3 19.7 C31.8 19.6 31.8 19.6 31.2 19.1 C30.5 18.5 29.2 17.1 28.4 16.4 C27.7 15.8 27.3 15.5 26.5 15.1 C25.8 14.7 25.3 14.4 23.9 13.9 C22.5 13.4 19.5 12.7 18.0 12.3 C16.6 11.8 16.2 11.6 15.3 11.2 C14.5 10.7 13.8 10.4 12.9 9.6 C12.0 8.9 10.5 7.4 9.7 6.8 C9.0 6.3 8.7 6.3 8.4 6.2 C8.0 6.1 7.8 6.2 7.5 6.4 C7.2 6.6 6.9 6.9 6.6 7.3 C6.4 7.7 6.2 8.1 6.1 8.7 C5.9 9.3 5.8 10.0 5.7 10.7 C5.7 11.4 5.7 12.3 5.7 13.1 C5.8 14.0 5.9 15.0 6.0 15.8 C6.1 16.6 6.3 17.3 6.5 18.1 C6.7 18.9 6.9 19.5 7.4 20.5 C7.8 21.5 8.6 23.0 9.3 24.1 C10.1 25.3 11.0 26.4 11.9 27.4 C12.7 28.4 13.2 28.9 14.5 30.0 C15.7 31.0 18.3 32.9 19.4 33.8 C20.5 34.7 20.6 34.8 21.0 35.4 C21.5 36.0 21.9 36.7 22.1 37.4 C22.4 38.0 22.5 38.6 22.5 39.3 C22.6 39.9 22.5 40.5 22.4 41.2 C22.3 41.9 22.1 42.7 21.8 43.4 C21.5 44.2 21.1 45.0 20.7 45.8 C20.3 46.6 19.8 47.3 19.3 48.0 C18.8 48.8 18.2 49.5 17.6 50.1 C17.0 50.8 16.8 51.1 15.6 52.0 C14.5 53.0 11.5 55.2 10.6 55.8%27 fill%3D%27none%27 stroke%3D%27%23fff%27 stroke-width%3D%276.4%27 stroke-linecap%3D%27round%27 stroke-linejoin%3D%27round%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<script>
+/* 主题首绘守卫：在样式表之前决定 data-theme，避免夜间刷新时先画一帧白天 */
+(function(){
+  try{
+    var t = localStorage.getItem('dsh-forum-theme');
+    if(t === 'auto'){ t = matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'; }
+    if(t !== 'day' && t !== 'night'){ return; }
+    document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.style.colorScheme = (t === 'night' ? 'dark' : 'light');
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="assets/app.95235ef9.css">
+</head>
+<body>
+<!-- 顶部装饰条（QQ 空间经典蓝） -->
+<div class="top-strip" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<div id="app"><div class="boot-skel" aria-hidden="true"><div class="bs-nav"></div><div class="bs-wrap"><div class="bs-rail"></div><div class="bs-main"><div class="bs-cover"></div><div class="bs-card"></div><div class="bs-card"></div></div><div class="bs-side"><div class="bs-card sm"></div><div class="bs-card sm"></div></div></div></div></div>
+
+<!-- 回到顶部 / 快捷操作 -->
+<div id="totop">
+  <button id="fab-write" class="fab fab-write" type="button" title="写日志" aria-label="写日志">✎</button>
+  <button id="fab-top" class="fab fab-top" type="button" title="回到顶部" aria-label="回到顶部" tabindex="-1" aria-hidden="true" disabled>↑</button>
+</div>
+
+<noscript>
+<style>#totop{display:none}#app{min-height:0}.boot-skel{display:none}</style>
+<div class="nojs">
+  <h1>鲸域</h1>
+  <p>这是一个纯前端的开发者社群演示站：更新日志流、插件条目库、社群版块、聊天和个人空间。</p>
+  <p>页面内容由 <b>js/app.js</b> 在浏览器里实时渲染，所以需要启用 JavaScript 才能看到。</p>
+  <p>开启方式：Chrome 设置 → 隐私和安全 → 网站设置 → JavaScript → 允许；或换用支持 JavaScript 的浏览器后刷新本页。</p>
+</div>
+</noscript>
+
+<script src="assets/brand.39e11789.js"></script>
+<script src="assets/data.25de2bd9.js"></script>
+<script src="assets/api.2e12961a.js"></script>
+<!-- v17 · 登录内核：必须在 app.js 之前。app.js 启动第一件事就是读 AUTH.state() 决定「我是谁」，
+     晚一步会先渲染出一帧未登录的顶栏再跳回登录页。 -->
+<script src="assets/auth.565b0921.js"></script>
+<script src="assets/app.d257f1e8.js"></script>
+</body>
+</html>

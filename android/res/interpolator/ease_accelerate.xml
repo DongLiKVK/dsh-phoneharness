@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  动效令牌 Motion.EASE_ACCELERATE —— 加速，**出场默认**。
+  cubic-bezier(0.4, 0.0, 1.0, 1.0)
+  证据：official/jadx-out/sources/defpackage/z24.java:10
+    public static final be3 c = new be3(0.4f, 0.0f, 1.0f, 1.0f);
+  方向与本项目 nav_exit.xml 原用的 @android:interpolator/accelerate_cubic 一致。
+  Java 等价实现：Motion.EASE_ACCELERATE。
+-->
+<pathInterpolator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:controlX1="0.4"
+    android:controlY1="0.0"
+    android:controlX2="1.0"
+    android:controlY2="1.0" />

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HostsActivity 中文字面量（zh 为基准语言，必须与搬移前逐字相同）。前缀 hs_。
+     注意：值里凡「取消」「删除」按钮沿用官方 R.string.cancel / R.string.delete，不在此重复定义；
+     「跟随电脑端」不在此（它参与落盘，见 official/I18N-SETTINGS.md）。 -->
+<resources>
+    <string name="hs_title">在线主机</string>
+    <string name="hs_add">＋ 添加主机</string>
+    <string name="hs_header_online">%1$d/%2$d 在线</string>
+    <string name="hs_header_probing">检测中…</string>
+    <string name="hs_hint_empty">还没有任何主机。点下面的「＋ 添加主机」，填电脑地址与 DSH 面板里的 6 位配对码。</string>
+    <string name="hs_hint_list">点一台主机即可切到它的工作台；长按可以打开它的归纳箱、改名或删除。</string>
+    <string name="hs_group_online">在线 · %1$d</string>
+    <string name="hs_group_online_empty">暂时没有主机在线</string>
+    <string name="hs_group_others">离线 / 检测中 · %1$d</string>
+    <string name="hs_foot">归纳箱（归档箱）与工作台共用同一台主机；换主机不会串用上一台的工作区。</string>
+    <string name="hs_tag_active">当前</string>
+    <string name="hs_sub_probing">%1$s · 检测中…</string>
+    <string name="hs_sub_offline">%1$s · 连不上</string>
+    <string name="hs_toast_offline">%1$s 现在连不上</string>
+    <string name="hs_menu_workbench">打开工作台</string>
+    <string name="hs_menu_archive">打开归纳箱</string>
+    <string name="hs_menu_rename">重命名</string>
+    <string name="hs_menu_delete">删除这台主机</string>
+    <string name="hs_rename_title">重命名主机</string>
+    <string name="hs_rename_hint">比如：家里台式 / 公司机器</string>
+    <string name="hs_save">保存</string>
+    <string name="hs_delete_title">删除这台主机？</string>
+    <string name="hs_delete_body">%1$s\n%2$s\n删掉后可以重新用配对码加回来。</string>
+    <string name="hs_add_title">添加主机</string>
+    <string name="hs_add_hint">在这台电脑的 DSH 面板里点「手机远程」，会给出 6 位配对码。</string>
+    <string name="hs_field_name">名称（可选）</string>
+    <string name="hs_field_code">6 位配对码</string>
+    <string name="hs_submit">连接并加入</string>
+    <string name="hs_err_address">先填电脑地址</string>
+    <string name="hs_err_code">配对码是 6 位数字</string>
+    <string name="hs_pairing">正在配对…</string>
+    <string name="hs_err_no_token">配对没拿到令牌</string>
+    <string name="hs_err_failed">配对失败：%1$s</string>
+    <string name="hs_added">已加入 %1$s</string>
+</resources>

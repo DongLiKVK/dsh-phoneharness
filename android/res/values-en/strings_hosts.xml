@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English for HostsActivity literals (prefix hs_). Baseline locale is zh; see res/values/strings_hosts.xml. -->
+<resources>
+    <string name="hs_title">Online hosts</string>
+    <string name="hs_add">+ Add host</string>
+    <string name="hs_header_online">%1$d/%2$d online</string>
+    <string name="hs_header_probing">Checking…</string>
+    <string name="hs_hint_empty">No hosts yet. Tap + Add host below and fill in the computer address and the 6-digit pairing code shown in the DSH panel.</string>
+    <string name="hs_hint_list">Tap a host to switch to its workbench; long-press it to open its archive box, rename it, or delete it.</string>
+    <string name="hs_group_online">Online · %1$d</string>
+    <string name="hs_group_online_empty">No hosts online right now</string>
+    <string name="hs_group_others">Offline / checking · %1$d</string>
+    <string name="hs_foot">The archive box and the workbench share the same host; switching hosts will not reuse the previous host workspace.</string>
+    <string name="hs_tag_active">Current</string>
+    <string name="hs_sub_probing">%1$s · checking…</string>
+    <string name="hs_sub_offline">%1$s · unreachable</string>
+    <string name="hs_toast_offline">%1$s is unreachable now</string>
+    <string name="hs_menu_workbench">Open workbench</string>
+    <string name="hs_menu_archive">Open archive box</string>
+    <string name="hs_menu_rename">Rename</string>
+    <string name="hs_menu_delete">Delete this host</string>
+    <string name="hs_rename_title">Rename host</string>
+    <string name="hs_rename_hint">e.g. Home desktop / Office machine</string>
+    <string name="hs_save">Save</string>
+    <string name="hs_delete_title">Delete this host?</string>
+    <string name="hs_delete_body">%1$s\n%2$s\nYou can add it back later with the pairing code.</string>
+    <string name="hs_add_title">Add host</string>
+    <string name="hs_add_hint">Tap the Phone remote entry in the DSH panel on this computer to get a 6-digit pairing code.</string>
+    <string name="hs_field_name">Name (optional)</string>
+    <string name="hs_field_code">6-digit pairing code</string>
+    <string name="hs_submit">Connect and add</string>
+    <string name="hs_err_address">Enter the computer address first</string>
+    <string name="hs_err_code">The pairing code is 6 digits</string>
+    <string name="hs_pairing">Pairing…</string>
+    <string name="hs_err_no_token">Pairing returned no token</string>
+    <string name="hs_err_failed">Pairing failed: %1$s</string>
+    <string name="hs_added">Added %1$s</string>
+</resources>

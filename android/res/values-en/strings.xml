@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English (values-en) translation of res/values/strings.xml.
+  Same names, same order, same placeholders and line breaks as the Chinese source.
+  Wording for the strings that also exist in the official DeepSeek client 2.6.1 follows
+  the official English strings (res/values/strings.xml of the official APK) verbatim;
+  app_* and the PhoneHarness-only screens are translated in the same short, quiet voice.
+-->
+<resources>
+    <string name="app_name">PhoneHarness</string>
+    <string name="app_slogan">Talk for real, deep down.</string>
+
+    <!-- Session list -->
+    <string name="session_list_empty_title">No chat yet</string>
+    <string name="session_list_empty_description">Your chats with PhoneHarness\nwill be shown here.</string>
+    <string name="session_group_pinned_collapsed">Pinned %1$d chats</string>
+    <string name="session_list_title">Chats</string>
+    <string name="session_history_label">Chat history</string>
+    <string name="message_reasoning_marker">Thinking</string>
+    <string name="message_press_resend">Resend</string>
+    <string name="message_press_edit_resend">Edit and resend</string>
+    <string name="message_press_resend_image">Resend this image</string>
+    <string name="message_press_markdown">Copy as Markdown</string>
+    <string name="question_header">DSH has a question</string>
+    <string name="question_ignore">Ignore</string>
+    <string name="question_answer">Answer</string>
+    <string name="question_skip_all">Skip all</string>
+    <string name="approval_allow_once">Allow once</string>
+    <string name="approval_reject">Reject</string>
+    <string name="session_group_pinned">Pinned</string>
+    <string name="session_history_timeline_label_today">Today</string>
+    <string name="session_history_timeline_label_yesterday">Yesterday</string>
+    <string name="session_history_timeline_label7_days">7 Days</string>
+    <string name="session_history_timeline_label30days">30 Days</string>
+    <string name="session_history_timeline_label_earlier">Earlier</string>
+    <string name="session_new_chat_button">New chat</string>
+    <string name="session_init_title">New chat</string>
+    <string name="session_pin_action">Pin</string>
+    <string name="session_unpin_action">Unpin</string>
+    <string name="rename_session_action">Rename</string>
+    <string name="rename_session_modal_title">Rename Chat</string>
+    <string name="delete_session_action">Delete</string>
+    <string name="session_delete_confirm">Delete</string>
+    <string name="session_delete_modal">Once deleted, this chat can\'t be recovered</string>
+    <string name="session_a_i_alert">AI-generated response, for reference only.</string>
+
+    <!-- Composer -->
+    <string name="chat_input_placeholder_chat">Type a message</string>
+    <string name="chat_input_placeholder_voice">Type a message or hold to speak</string>
+    <string name="attach_files">Attach files</string>
+    <string name="upload_panel_album">Photo</string>
+    <string name="upload_panel_camera">Camera</string>
+    <string name="upload_panel_file">Document</string>
+    <string name="send">Send</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="copy">Copy</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading</string>
+    <string name="generating">Generating</string>
+    <string name="sending">Sending</string>
+
+    <!-- Models and toggles -->
+    <string name="default_model_name">Instant</string>
+    <string name="expert_model_name">Expert</string>
+    <string name="vision_model_name">Vision</string>
+    <string name="message_r1_button">Think</string>
+    <string name="message_search_button">Search</string>
+    <string name="file_cannot_with_search_toast">Uploading files is unavailable for searching.</string>
+    <string name="message_search_with_file_error">Remove the file before searching</string>
+
+    <!-- Message actions -->
+    <string name="message_press_copy">Copy</string>
+    <string name="message_press_edit">Edit</string>
+    <string name="message_press_like">Like</string>
+    <string name="message_press_dislike">Dislike</string>
+    <string name="message_press_regenerate">Regenerate</string>
+    <string name="message_press_report">Report</string>
+    <string name="message_continue">Continue</string>
+    <string name="message_select_text">Select text</string>
+    <string name="select_text_count">%1$d of %2$d characters</string>
+    <string name="select_text_all">Select all</string>
+    <string name="select_text_done">Done</string>
+    <string name="select_text_copied">Copied %1$d characters</string>
+    <string name="select_text_pick">Pick some text first</string>
+    <string name="select_text_empty">This message has no selectable text</string>
+    <string name="select_text_hint">Long-press a word · drag the handles to adjust</string>
+    <string name="copy_ok">Copied</string>
+
+    <!-- Status -->
+    <string name="message_thinking">Thinking</string>
+    <string name="message_think_duration">Thought for %1$d seconds</string>
+    <string name="thinking_auto_fold">Automatically collapse thinking content</string>
+    <string name="expand">Expand</string>
+    <string name="collapse">Collapse</string>
+    <string name="go_to_bottom">Go to bottom</string>
+
+    <!-- Welcome -->
+    <string name="welcome_message_title_unified">How can I help you?</string>
+    <string name="suggestion_prompt_analyze">Analyze</string>
+    <string name="suggestion_prompt_explain">Explain</string>
+    <string name="suggestion_prompt_find_answer">Find Answer</string>
+    <string name="suggestion_prompt_suggest_solution">Suggest a Solution</string>
+    <string name="suggestion_prompt_summarize">Summarize</string>
+    <string name="suggestion_prompt_what_is_this">\"What\'s This\"</string>
+
+    <!-- Settings -->
+    <string name="profile_title">Settings</string>
+    <string name="app_color_scheme">Appearance</string>
+    <string name="app_color_scheme_dark">Dark</string>
+    <string name="app_color_scheme_light">Light</string>
+    <string name="app_color_scheme_system">System</string>
+    <string name="font_size">Font size</string>
+    <string name="default_font_size">Default</string>
+    <string name="search_hint">Search chat content...</string>
+    <string name="search_empty_result">No relevant results</string>
+
+    <!-- Connection -->
+    <string name="pair_title">Connect your computer</string>
+    <string name="pair_action">Connect</string>
+    <string name="pair_probe">Test connection only</string>
+
+    <!-- Composer strip (mirrors the official composer) -->
+    <string name="composer_hint_voice">Type a message or hold to speak</string>
+    <string name="composer_hold_to_talk">Hold to speak</string>
+    <string name="composer_release_send">Release to send, swipe up to cancel</string>
+    <string name="composer_release_cancel">Release to cancel</string>
+    <string name="composer_upload_camera">Camera</string>
+    <string name="composer_upload_album">Photo</string>
+    <string name="composer_upload_file">Document</string>
+    <string name="composer_search_note">The host can\'t search the web. This switch only reflects the UI; messages stay offline.</string>
+    <string name="composer_voice_note">No speech recognition is available on this phone. Type with the keyboard.</string>
+    <string name="composer_camera_note">No camera is available on this phone.</string>
+    <string name="composer_file_note">Only images can be sent for now. Other file types won\'t go through.</string>
+
+    <!-- Home (mirrors the official new chat page) -->
+    <string name="home_greeting">Hi. What can I do for you?</string>
+    <string name="session_new_chat_tooltip">New chat</string>
+
+    <!-- History drawer / batch selection (official wording) -->
+    <string name="session_batch_entry_button">Multi-select</string>
+    <string name="select_chat_title">Select Chats</string>
+    <string name="session_batch_selected_count">%1$d chat selected</string>
+    <string name="session_batch_pin_alert">Pin the selected %1$d chat?</string>
+    <string name="session_batch_pin_success_toast">Pinned %1$d chat</string>
+    <string name="session_batch_delete_alert_title">Delete the selected %1$d chat?</string>
+    <string name="session_batch_delete_description">Deleted chats can\'t be recovered. Share links from them will be disabled.</string>
+    <string name="session_batch_delete_success_toast">Deleted %1$d chat</string>
+    <string name="session_untitled">New chat</string>
+
+    <!-- Settings page (official groups and labels) -->
+    <string name="profile_info_section_header">Profile</string>
+    <string name="account_management">Account settings</string>
+    <string name="data_controls">Data controls</string>
+    <string name="app_section_title">App</string>
+    <string name="app_language">Language</string>
+    <string name="app_language_value">English</string>
+    <string name="personalization">Personalization</string>
+    <string name="account_audio_input_language_header">Audio</string>
+    <string name="voice_switch_bottom_sheet_title">Voice</string>
+    <string name="profile_about_section_header">About</string>
+    <string name="profile_check_for_updates">Check for updates</string>
+    <string name="profile_service_agreement">Terms of Service</string>
+    <string name="profile_help_and_feedback">Help &amp; Feedback</string>
+    <string name="profile_logout">Log out</string>
+    <string name="follow_system">Follow system</string>
+
+    <!-- Font size page (official wording) -->
+    <string name="preview_font_size_msg1">Preview font size</string>
+    <string name="preview_font_size_msg2">You can adjust the font size by dragging the slider below.</string>
+    <string name="preview_font_size_msg3">If there are any issues or suggestions during use, send feedback to the PhoneHarness team.</string>
+
+    <!-- Read aloud (official wording) -->
+    <string name="read_aloud_start_label">Read aloud</string>
+    <string name="read_aloud_stop_label">Stop reading</string>
+    <string name="read_aloud_unavailable">No read-aloud engine is available on this device.</string>
+
+    <!-- App-specific notes -->
+    <string name="settings_connection_header">Content</string>
+    <string name="settings_connection_row">Computer connection</string>
+    <string name="settings_archive_row">Archive</string>
+    <string name="settings_about_row">About PhoneHarness</string>
+
+    <!-- Desktop composer seats: model / reasoning effort / permission -->
+    <string name="seat_model">Model</string>
+    <string name="seat_effort">Reasoning effort</string>
+    <string name="seat_effort_default">Default</string>
+    <string name="seat_model_empty">Select a model</string>
+    <string name="seat_search_model_hint">Search models</string>
+    <string name="seat_loading_models">Loading models…</string>
+    <string name="seat_custom_section">Custom models</string>
+    <string name="seat_add_custom">Add custom model</string>
+    <string name="seat_field_display_name">Display name</string>
+    <string name="seat_field_display_name_hint">e.g. My gateway</string>
+    <string name="seat_field_route">Route</string>
+    <string name="seat_field_route_hint">Lowercase letters, digits, - or _, e.g. my-gateway</string>
+    <string name="seat_field_base_url">Base URL</string>
+    <string name="seat_field_base_url_hint">https://api.example.com/v1</string>
+    <string name="seat_field_env">Key environment variable</string>
+    <string name="seat_field_env_hint">e.g. MYGW_KEY</string>
+    <string name="seat_field_models">Model IDs (comma-separated)</string>
+    <string name="seat_field_models_hint">e.g. gpt-4o,qwen-max</string>
+    <string name="seat_field_context">Context window (optional)</string>
+    <string name="seat_field_context_hint">e.g. 128000</string>
+    <string name="seat_field_max_tokens">Max output (optional)</string>
+    <string name="seat_field_max_tokens_hint">e.g. 8192</string>
+    <string name="seat_save">Save</string>
+    <string name="seat_saving">Saving…</string>
+    <string name="seat_added">Added. It takes effect as soon as you select it.</string>
+    <string name="seat_deleted">Deleted</string>
+    <string name="seat_delete_title">Delete this custom model?</string>
+    <string name="seat_delete_desc">After you delete route %1$s, its models will no longer appear on your phone or computer.</string>
+    <string name="seat_delete_action">Delete</string>
+    <string name="seat_err_route">Routes use only lowercase letters, digits, - and _ (2-32 characters)</string>
+    <string name="seat_err_base_url">Base URL must start with https://</string>
+    <string name="seat_err_env">Key environment variables use only uppercase letters, digits and underscores</string>
+    <string name="seat_err_models">Enter at least one valid model ID, separated by commas</string>
+    <string name="seat_err_number">Enter a positive integer</string>
+    <string name="seat_code_route">Invalid route format (lowercase letters, digits, - or _, 2-32 characters)</string>
+    <string name="seat_code_base_url">Invalid base URL</string>
+    <string name="seat_code_env">Invalid key environment variable</string>
+    <string name="seat_code_models">Invalid model ID</string>
+    <string name="seat_code_exists">A route with this name already exists</string>
+    <string name="seat_code_unavailable">The model config on your computer can\'t be written right now.</string>
+    <string name="seat_code_unknown">That didn\'t work. Try again later.</string>
+    <string name="seat_no_match">No matching models.</string>
+    <string name="seat_no_models">No models available.</string>
+    <string name="seat_no_efforts">This model has no reasoning effort levels.</string>
+    <string name="seat_provider_account">DeepSeek account</string>
+    <string name="perm_read_only">Read only</string>
+    <string name="perm_workspace_write">Workspace write</string>
+    <string name="perm_full_access">Full access</string>
+    <string name="perm_confirm_title">Turn on full access?</string>
+    <string name="perm_confirm_desc">With full access, the agent asks for fewer confirmations and can act directly, including sensitive operations, file changes and external commands. Only use it when you trust the task.</string>
+    <string name="perm_confirm_ack">I understand the risks and want to continue</string>
+    <string name="perm_enable">Turn on full access</string>
+
+    <!-- Online hosts: one phone, several computers running the harness -->
+    <string name="hosts_title">Online hosts</string>
+    <string name="hosts_subtitle">Control several hosts at once</string>
+    <string name="hosts_online">Online</string>
+    <string name="hosts_offline">Offline</string>
+    <string name="hosts_probing">Checking</string>
+    <string name="hosts_current">Current</string>
+    <string name="hosts_add">+ Add host</string>
+
+    <!-- Host Harness: workspace and agent preset (keys frozen, see docs/harness-contract.md) -->
+    <string name="harness_workspace_chip_default">Select workspace</string>
+    <string name="harness_preset_chip_default">Select mode</string>
+    <string name="harness_workspace_panel_title">Select workspace</string>
+    <string name="harness_preset_panel_title">Agent preset</string>
+    <string name="harness_preset_section_intro">Choose the tools and workflow this agent uses. Use Standard mode for everyday tasks, and Creative mode to extend what DSH can do.</string>
+    <string name="harness_group_builtin">Built-in</string>
+    <string name="harness_group_custom">Custom</string>
+    <string name="harness_in_use">Default for new tasks</string>
+    <string name="harness_no_description">No description.</string>
+    <string name="harness_broken_badge">Failed to load</string>
+    <string name="harness_use_this_dir">Use this folder</string>
+    <string name="harness_browse_dir">Browse host folders</string>
+    <string name="harness_manual_path">Enter a path</string>
+    <string name="harness_parent_dir">Parent folder</string>
+    <string name="harness_refresh">Refresh</string>
+    <string name="harness_host_label">Host</string>
+    <string name="harness_readonly_warning">This host doesn\'t accept config writes. Everything below is read-only.</string>
+    <string name="harness_persist_runtime_only">Applied (this run)</string>
+    <string name="harness_switch_refused">Couldn\'t switch to \"%1$s\": %2$s</string>
+    <string name="harness_settings_row">Host Harness</string>
+    <string name="harness_recent_workspaces">Recent workspaces</string>
+    <string name="harness_empty_workspaces">No workspaces yet</string>
+    <string name="harness_empty_presets">This host offers no agent presets</string>
+    <string name="harness_loading">Reading host config…</string>
+    <string name="harness_retry">Reload</string>
+    <string name="harness_load_error">Couldn\'t read the host config: %1$s</string>
+    <string name="harness_host_notes">Host notes</string>
+
+    <!-- New chat page: workspace / preset chips and form validation -->
+    <string name="new_session_input_hint">Message PhoneHarness</string>
+    <string name="new_session_workspace_hint">Must be an existing folder on your computer. Tap to pick a recent workspace or browse folders.</string>
+    <string name="new_session_permission_label">Permission</string>
+    <string name="new_session_submit">Start chat</string>
+    <string name="new_session_creating">Creating…</string>
+    <string name="new_session_need_text">Write your first message</string>
+    <string name="new_session_need_workspace">Set a working folder</string>
+    <string name="new_session_no_session_id">The server didn\'t return a session id.</string>
+    <string name="new_session_create_failed">Couldn\'t create: %1$s</string>
+    <string name="new_session_catalog_failed">Couldn\'t load models. Using the server default.</string>
+</resources>

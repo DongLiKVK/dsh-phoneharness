@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  前进时被盖住的那一页：向左视差后退约 19% 屏宽，**保持不透明**。
+  · 300ms + EASE_STANDARD：bk.java:78-80 的上层过渡同样用 k53.Z0(300,0,z24.a)，两页同步位移。
+  · 视差幅度 -9%p 沿用本项目原值：re-motion 已裁定 B3 的 top_left 1036→867 与容器边界是
+    **同一条硬边界**（不是旧页顶栏），故"旧页位移 169px"这个量没有独立实测依据；
+    在没有证据的地方不发明数值，只改有证据的时长 / 曲线 / 顺序。
+  · 为何不加 alpha：旧页在**下层**。若它在下层淡到 0，新页（前 105ms alpha 还是 0）尚未遮住
+    左侧区域，露出的会是启动器而不是同一底色，参考（Compose 单窗口）没有这个现象。
+    所以下层一律保持不透明，只做位移；淡入淡出只作用在**上层**那一页。
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromXDelta="0"
+        android:toXDelta="-9%p"
+        android:duration="300"
+        android:interpolator="@interpolator/ease_standard" />
+</set>

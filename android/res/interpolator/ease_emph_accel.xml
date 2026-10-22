@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  动效令牌 Motion.EASE_EMPH_ACCEL —— 参考的「出」侧强调加速曲线。
+  cubic-bezier(0.3, 0.0, 1.0, 1.0)
+  证据（本机逐行复核）：official/jadx-out/sources/defpackage/mh7.java:15  be3 be3Var = new be3(0.3f, 0.0f, 1.0f, 1.0f)   /  mh7.java:17  b = new zza(200, 0, be3Var)
+  Java 等价实现：Motion.EASE_EMPH_ACCEL。
+-->
+<pathInterpolator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:controlX1="0.3"
+    android:controlY1="0.0"
+    android:controlX2="1.0"
+    android:controlY2="1.0" />

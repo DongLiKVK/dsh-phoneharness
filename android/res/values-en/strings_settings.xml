@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English for SettingsActivity literals (prefix st_). Baseline locale is zh; see res/values/strings_settings.xml. -->
+<resources>
+    <string name="st_workspace_row">Workspace</string>
+    <string name="st_personalization_toast">Personalization settings are inherited from the desktop host</string>
+    <string name="st_voice_toast">Read aloud uses the phone system speech engine</string>
+    <string name="st_hosts_value_none">Not added</string>
+    <string name="st_hosts_value_multi">%1$s · %2$d hosts</string>
+    <string name="st_workspace_unreachable">Cannot reach the computer: %1$s</string>
+    <string name="st_workspace_dialog_title">Workspace</string>
+    <string name="st_workspace_switched">Switched workspace to %1$s</string>
+    <string name="st_connection_none">Not connected</string>
+    <string name="st_workspace_follow">Follow desktop</string>
+    <string name="st_update_need_host">Connect to your computer before checking for updates</string>
+    <string name="st_update_checking">Checking…</string>
+    <string name="st_update_value">New version %1$s</string>
+    <string name="st_update_remote_newer">You have %1$s, the computer has %2$s</string>
+    <string name="st_update_remote_rebuilt">Same version number (%1$s), but the installer on the computer is newer</string>
+    <string name="st_update_latest">Current version %1$s is up to date</string>
+    <string name="st_update_failed">Update check failed: %1$s</string>
+    <string name="st_update_dialog_title">New version %1$s available</string>
+    <string name="st_update_dialog_body">%1$s\n\nDownload address: %2$s</string>
+    <string name="st_update_download">Download</string>
+    <string name="st_update_no_browser">No app available to open it. Address: %1$s</string>
+    <string name="st_logout_confirm">After signing out you will need to scan the code or enter the token again to connect. Sign out?</string>
+    <string name="st_service_text">PhoneHarness is a remote control interface for DSH running on your computer and does not provide model capabilities itself.\n\nText and images you send from your phone are delivered through the computer address you entered straight to the DSH on your own computer, processed by the local model and streamed back; there is no third-party server in between and no content is retained.\n\nConnection information (the computer address and the access token) is stored only on this device and is cleared as soon as you sign out.\n\nOnly connect to computers you trust; do not tell others the address and pairing code on public Wi-Fi.\n\nThis app is provided as is; missing results caused by a network interruption, the host not running, or an error from the model itself are not considered a service failure.</string>
+    <string name="st_help_text">① Connect to your computer\nOpen DSH on your computer and tap the Phone remote entry to see a 6-digit pairing code; open this app on your phone, enter the LAN IP and port of the computer, then enter the pairing code.\n\n② Send images\nIn the + button on the left of the message input you can take a photo, pick an image from the gallery, or choose a file. Only images are supported for now; other file types cannot be sent.\n\n③ Cannot connect\nFirst make sure the phone and the computer are on the same Wi-Fi and that DSH is still running on the computer, then re-test the connection in Computer connection.\n\n④ Feedback\nGive the symptoms, your phone model, and the computer-side logs to the person using the computer.</string>
+    <string name="st_font_bucket_min">Small</string>
+    <string name="st_font_bucket_small">Slightly small</string>
+    <string name="st_font_bucket_large">Large</string>
+    <string name="st_font_bucket_max">Extra large</string>
+</resources>
