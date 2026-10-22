@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  动效令牌 Motion.EASE_PANEL_ALT —— 长/短面板另一组的过渡曲线。见 official/MOTION-SPEC.md §6.3 / §2.4 的 c44 组。
+  cubic-bezier(0.4, 0.0, 0.6, 1.0)
+  证据：
+    official/jadx-out/sources/defpackage/c44.java:9-13
+      b = new zza(150, 0, new be3(0.4f, 0.0f, 0.6f, 1.0f));   // 过渡段 150ms
+  Java 等价实现：Motion.EASE_PANEL_ALT（Motion.cubicBezier 解析式求解，两侧同值）。
+-->
+<pathInterpolator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:controlX1="0.4"
+    android:controlY1="0.0"
+    android:controlX2="0.6"
+    android:controlY2="1.0" />

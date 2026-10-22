@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 浅色：DeepSeek 官方白底形态；夜间由 values-night/styles.xml 覆盖成 #0F0F0F -->
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:textColor">#0F0F0F</item>
+        <item name="android:colorAccent">#426EFE</item>
+    </style>
+
+    <!--
+        「内容页」主题（设置这类浅灰底页面）。
+        系统启动预览窗取的是主题里的 windowBackground，不是代码里 setBackgroundDrawable 的值；
+        预览窗纯白、页面底 #F3F4F6 时会先闪一帧白，把预览窗设成页面底色即无闪。
+    -->
+    <style name="AppTheme.Content" parent="@style/AppTheme">
+        <item name="android:windowBackground">@color/page_bg</item>
+    </style>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 「＋」打开上传面板后变成「⊗」（官方 composer 里上传按钮是 add_close 形态）。
+     圆形沿用官方 ic_add_outline_26 的圆，两笔换成对角线。 -->
+<vector android:height="26.0dp" android:width="26.0dp" android:viewportWidth="26.0" android:viewportHeight="26.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#00000000" android:pathData="M9.2,9.2L16.8,16.8" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.75" android:strokeLineCap="round" />
+    <path android:fillColor="#00000000" android:pathData="M16.8,9.2L9.2,16.8" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.75" android:strokeLineCap="round" />
+    <path android:fillColor="#00000000" android:pathData="M13.001,12.999m-11.331,0a11.331,11.331 0,1 1,22.662 0a11.331,11.331 0,1 1,-22.662 0" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.7" />
+</vector>

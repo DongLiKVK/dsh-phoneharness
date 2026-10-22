@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  前进：新页从右侧**整屏宽度**滑入，同时在末段淡入。
+  —— 数值全部来自参考 APK 字节码，不是估计：
+    · 位移 300ms + cubic(0.4,0,0.2,1)=EASE_STANDARD
+      official/jadx-out/sources/defpackage/bk.java:78-80
+        new e74(new fsa(null, new vv9(new ew0(uy6(27), 4), k53.Z0(300, 0, z24.a, 2)), ...))
+      其中 z24.a = be3(0.4f,0,0.2f,1f)（z24.java:8）
+    · 淡入 195ms + 延迟 105ms + cubic(0,0,0.2,1)=EASE_DECELERATE
+      official/jadx-out/sources/defpackage/mh7.java:18-21  iH=195, i=300-195=105, c=y64.d(tween(195,105,z24.b))
+      bk.java:79  ...)).a(mh7.c)  ← 进场过渡挂的就是 mh7.c
+    · 105 = 300 - 195，进出预算合计正好 300ms（自洽校验）
+  · 位移幅度 100%p：参考实测 C1-conv-open 新页左缘从约 0.9 屏宽收到 0（帧 0010→0014），
+    与 Compose slideInHorizontally{ it } 的整宽位移一致；被追踪物体宽度略小于屏幕，故测得 89%。
+  · 用 startOffset 而不是统一淡入，是为了复刻「进场淡入发生在位移的后段」这个顺序。
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromXDelta="100%p"
+        android:toXDelta="0"
+        android:duration="300"
+        android:interpolator="@interpolator/ease_standard" />
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:duration="195"
+        android:startOffset="105"
+        android:interpolator="@interpolator/ease_decelerate" />
+</set>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English translation of res/values/strings_misc.xml
+     (Pick.java / Img.java / Api.java / Item.java / App.java). Keys and %n$d placeholders match one-to-one. -->
+<resources>
+    <!-- network layer errors (thrown by Api.java; Img.java shares the empty-address one) -->
+    <string name="misc_err_no_host">No computer address yet</string>
+    <string name="misc_err_not_json">The server did not return JSON</string>
+    <string name="misc_err_fetch_http">Fetching the file failed: HTTP %1$d</string>
+    <string name="misc_err_unknown">Unknown error</string>
+
+    <!-- image picking / loading (Pick.java, Img.java) -->
+    <string name="misc_pick_unreadable">Could not read this image</string>
+    <string name="misc_pick_unknown_format">This is not a recognizable image</string>
+    <string name="misc_pick_too_large">Could not shrink this image — try another one</string>
+    <string name="misc_img_empty">This image is empty</string>
+    <string name="misc_img_decode_failed">Could not decode this image</string>
+
+    <!-- timeline status words (Item.java) -->
+    <string name="misc_item_tool_call">(tool call)</string>
+    <string name="misc_item_needs_approval">Needs approval</string>
+    <string name="misc_item_tool_failed">Tool failed</string>
+    <string name="misc_item_tool">Tool</string>
+    <string name="misc_item_running">Running</string>
+
+    <!-- fallback title for an unnamed session (App.SLOGAN) -->
+    <string name="misc_slogan">Real talk, deep in the water</string>
+</resources>

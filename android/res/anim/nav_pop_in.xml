@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  返回时被露出来的那一页：从左侧 -19%p 视差位回到原位，**保持不透明**（同上：它在下层）。
+  · 300ms + EASE_STANDARD，与 nav_pop_out 的右移同步。
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromXDelta="-9%p"
+        android:toXDelta="0"
+        android:duration="300"
+        android:interpolator="@interpolator/ease_standard" />
+</set>

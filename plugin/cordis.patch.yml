@@ -1,0 +1,35 @@
+# dsh-phoneharness — 手机远程控制本机 DSH
+#
+# 插入一条记录：宿主侧在 bind:<port> 上开一个对外 HTTP/SSE 端口给手机 APK 用，
+# 同时在回环 webServer 上挂 /dsh-phone/api 给侧栏面板用（显示配对码与设备）。
+- insert:
+    - id: dsh-phoneharness
+      name: dsh-phoneharness
+      config:
+        enabled: true
+        # 手机连的端口。0 表示让系统挑；默认 8737。
+        port: 8737
+        # 监听地址（逗号分隔，可用别名）：
+        #   loopback / local = 127.0.0.1，只有本机能连
+        #   lan              = 本机所有私网地址（同一 WiFi 的手机可连）——默认开启，开箱即用
+        #   tailscale        = 同一 tailnet 的地址（可选，没装 Tailscale 时自动跳过）
+        #   0.0.0.0          = 所有网卡（不推荐）
+        # 只允许同一 WiFi 时改成 loopback,lan；只走 Tailscale 改成 loopback,tailscale。
+        bind: loopback,lan,tailscale
+        # 配对码有效期（毫秒）
+        pairingTtlMs: 600000
+        # 新建会话的默认模型（provider/model）。留空 = 用 catalog 里第一个。
+        model: ''
+        # 新建会话的默认权限预设。留空 = 用最宽松的那个。
+        permission: ''
+        # 新建会话的默认 agent 预设。留空 = 第一个可用预设。
+        agentPreset: ''
+        # 审批转发：手机连着时接管 approval/request，超过这个时间没答就交回桌面 UI。
+        approvalTimeoutMs: 120000
+        # 自动更新检测：宿主启动 8 秒后查一次 npm / GitHub，之后每 updateIntervalMs 再查。
+        # 面板上的开关会把它落盘到 ~/.dsh/phone-harness/update.json，重启后保持。
+        updateAuto: true
+        # 复查间隔（毫秒），最小 5 分钟，默认 6 小时。
+        updateIntervalMs: 21600000
+        # 自建检查源（可选）：任意返回 {"version":"x.y.z"} 的 http(s) 地址，会和 npm/GitHub 的结果一起比大小。
+        updateFeed: ''

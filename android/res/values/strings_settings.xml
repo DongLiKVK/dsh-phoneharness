@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SettingsActivity 中文字面量（zh 为基准语言，必须与搬移前逐字相同）。前缀 st_。 -->
+<resources>
+    <!-- 工作区 / 主机行 -->
+    <string name="st_workspace_row">工作区</string>
+    <string name="st_personalization_toast">个性化设置继承自电脑端宿主</string>
+    <string name="st_voice_toast">朗读使用手机系统语音引擎</string>
+    <string name="st_hosts_value_none">未添加</string>
+    <string name="st_hosts_value_multi">%1$s · 共 %2$d 台</string>
+    <string name="st_workspace_unreachable">连不上电脑：%1$s</string>
+    <string name="st_workspace_dialog_title">工作区</string>
+    <string name="st_workspace_switched">工作区已切到 %1$s</string>
+    <string name="st_connection_none">未连接</string>
+    <!-- 显示值同时会被落盘（prefs.workspaceName），落盘改为空串表示跟随，见报告 -->
+    <string name="st_workspace_follow">跟随电脑端</string>
+    <!-- 检查更新 -->
+    <string name="st_update_need_host">先连上电脑再检查更新</string>
+    <string name="st_update_checking">检查中…</string>
+    <string name="st_update_value">有新版本 %1$s</string>
+    <string name="st_update_remote_newer">当前 %1$s，电脑上是 %2$s</string>
+    <string name="st_update_remote_rebuilt">版本号相同（%1$s），但电脑上的安装包内容更新</string>
+    <string name="st_update_latest">当前版本 %1$s 已是最新版本</string>
+    <string name="st_update_failed">检查更新失败：%1$s</string>
+    <string name="st_update_dialog_title">发现新版本 %1$s</string>
+    <string name="st_update_dialog_body">%1$s\n\n下载地址：%2$s</string>
+    <string name="st_update_download">去下载</string>
+    <string name="st_update_no_browser">没找到能打开的浏览器，地址：%1$s</string>
+    <!-- 退出登录 -->
+    <string name="st_logout_confirm">退出后需要重新扫码/输入令牌连接电脑，确定退出？</string>
+    <!-- 关于：服务协议 / 帮助与反馈（长段落，保留原分段与双换行） -->
+    <string name="st_service_text">PhoneHarness 手机端是电脑端 DSH 的远程遥控界面，本身不提供模型能力。\n\n你在手机上发送的文字与图片，会经你填写的电脑地址直接送到你自己电脑上的 DSH，由本机模型处理并流式返回；中间没有第三方服务器，也不做内容留存。\n\n连接信息（电脑地址与访问令牌）只保存在本机，退出登录会立即清除。\n\n请只连接你信任的电脑；在公共 Wi-Fi 下不要把地址与配对码告诉他人。\n\n本应用按现状提供，网络中断、宿主未运行或模型自身错误导致的结果缺失不视为服务异常。</string>
+    <string name="st_help_text">① 连接电脑\n在电脑上打开 DSH，点「手机远程」入口，会显示一个 6 位配对码；手机打开本应用，填电脑的局域网 IP 与端口，再输入配对码即可。\n\n② 发图片\n对话输入框左侧的「+」里可以拍照、从相册选图或选择文件，目前只支持图片，其它文件类型发不出去。\n\n③ 老是连不上\n先确认手机与电脑在同一个 Wi-Fi、电脑端 DSH 仍在运行，再到「电脑连接」里重新测一次连通。\n\n④ 反馈问题\n把现象、手机型号和电脑端的日志一起交给电脑端的使用者即可。</string>
+    <!-- 字号档位（「标准」沿用官方 R.string.default_font_size） -->
+    <string name="st_font_bucket_min">小</string>
+    <string name="st_font_bucket_small">偏小</string>
+    <string name="st_font_bucket_large">大</string>
+    <string name="st_font_bucket_max">特大</string>
+</resources>

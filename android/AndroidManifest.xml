@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lc.phoneharness"
+    android:versionCode="42"
+    android:versionName="0.6.26">
+
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <!-- 「拍照」用系统相机 App；没有相机的设备也能装（required=false）。 -->
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.speech.action.RECOGNIZE_SPEECH" />
+        </intent>
+    </queries>
+
+    <application
+        android:label="PhoneHarness"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="false"
+        android:debuggable="true"
+        android:supportsRtl="true">
+
+        <!-- 启动界面：展示品牌 logo，短暂停留后进入主界面。 -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:label="PhoneHarness"
+            android:clearTaskOnLaunch="true"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="PhoneHarness"
+            android:theme="@style/AppTheme" />
+
+        <!-- 相机写图用的最小内容提供者，只服务本 App。 -->
+        <provider
+            android:name=".Shot"
+            android:authorities="com.lc.phoneharness.shot"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
+        <activity android:name=".PairActivity" android:exported="false" android:label="连接电脑" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="设置"
+            android:theme="@style/AppTheme.Content" />
+        <activity android:name=".HostsActivity" android:exported="false" android:label="在线主机" />
+        <activity android:name=".ChatActivity" android:exported="false" android:label="对话" />
+        <activity
+            android:name=".NewSessionActivity"
+            android:exported="false"
+            android:label="新建对话"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+</manifest>

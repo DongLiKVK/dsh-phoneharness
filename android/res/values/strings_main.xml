@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MainActivity（首页 / 抽屉 / 归档箱 / 搜索页 / 多选态）的界面文案。
+  原文全部写死在 MainActivity.java 里，这里逐字搬运（含空格、… 形状、中文引号「」与换行位置），
+  作为中文基准；values-en/strings_main.xml 是对应英文译文。
+  前缀 mn_ = Main 页接手的那批（避开 strings.xml 里的既有条目）。
+  注释：抽屉菜单（menus）与分组标签「置顶」那几条既显示又参与 equals 判断，
+  按约束不搬，仍留在 MainActivity.java 里。
+-->
+<resources>
+    <!-- 选图 -->
+    <string name="mn_reading_image">正在读取图片…</string>
+    <string name="mn_image_limit">一条消息最多带 %1$d 张图</string>
+    <string name="mn_image_unreadable">这张图读不了：%1$s</string>
+
+    <!-- 归档箱标题 -->
+    <string name="mn_archive_title">归档箱</string>
+    <string name="mn_archive_title_count">归档箱 · %1$d</string>
+    <string name="mn_empty_archive">归档箱是空的</string>
+    <string name="mn_empty_archive_remote">这台电脑上还没有归档对话</string>
+    <string name="mn_empty_workspace">这个工作区还没有对话</string>
+    <string name="mn_archive_confirm_title">归档这个对话？</string>
+    <string name="mn_archive_confirm_message">归档后它不再出现在列表里，可以从归档箱恢复。</string>
+    <string name="mn_action_archive">归档</string>
+    <string name="mn_archive_failed">归档失败：%1$s</string>
+    <string name="mn_toast_archived">已归档</string>
+
+    <!-- 抽屉 ⋯ 菜单 -->
+    <string name="mn_menu_hosts">在线主机</string>
+    <string name="mn_menu_archive">归档箱</string>
+    <string name="mn_menu_refresh">刷新列表</string>
+    <string name="mn_menu_connect">连接设置</string>
+    <string name="mn_menu_settings">设置</string>
+
+    <!-- 工作区 chip -->
+    <string name="mn_ws_all">全部</string>
+
+    <!-- 多选 / 批量操作 -->
+    <string name="mn_action_pin">置顶</string>
+    <string name="mn_action_delete">删除</string>
+    <string name="mn_select_first">先选对话</string>
+    <string name="mn_delete_batch_title">删除 %1$d 个对话？</string>
+    <string name="mn_delete_batch_message">删除后这些对话会移入归档箱，可以从归档箱里找回来。</string>
+    <string name="mn_batch_done">已完成</string>
+    <string name="mn_batch_partial">部分失败：%1$s</string>
+
+    <!-- 搜索页 -->
+    <string name="mn_search_hint_empty">输入关键字搜索对话</string>
+    <string name="mn_search_no_hit">没有找到相关对话</string>
+    <string name="mn_search_found">找到 %1$d 个对话</string>
+
+    <!-- 列表数据态 -->
+    <string name="mn_refreshing">正在刷新…</string>
+    <string name="mn_refreshed">已刷新 · %1$d 个对话</string>
+    <string name="mn_offline_title">连不上电脑</string>
+    <string name="mn_offline_hint">\n检查地址、令牌，或去「连接设置」重新配对。</string>
+    <string name="mn_retry">重试</string>
+
+    <!-- 条目操作 -->
+    <string name="mn_archive_menu_open">打开</string>
+    <string name="mn_archive_menu_restore">恢复</string>
+    <string name="mn_copy_session_id">复制对话 ID</string>
+    <string name="mn_untitled_session">对话</string>
+    <string name="mn_toast_pinned">已置顶</string>
+    <string name="mn_toast_unpinned">已取消置顶</string>
+    <string name="mn_toast_restored">已恢复</string>
+    <string name="mn_op_failed">操作失败：%1$s</string>
+
+    <!-- 重命名 -->
+    <string name="mn_rename_title">重命名对话</string>
+    <string name="mn_save">保存</string>
+    <string name="mn_cancel">取消</string>
+    <string name="mn_title_required">标题不能为空</string>
+    <string name="mn_toast_renamed">已重命名</string>
+    <string name="mn_rename_failed">改名失败：%1$s</string>
+
+    <!-- 复制 / 发消息 -->
+    <string name="mn_toast_copied">已复制</string>
+    <string name="mn_not_connected">还没连上电脑，先去「连接设置」看看地址和令牌</string>
+    <string name="mn_connecting">正在连接电脑…</string>
+    <string name="mn_no_session_id">电脑没有返回对话 id</string>
+    <string name="mn_send_failed">发送失败：%1$s</string>
+    <string name="mn_connect_failed">连不上电脑：%1$s</string>
+    <string name="mn_action_unpin">取消置顶</string>
+    <string name="mn_action_rename">重命名</string>
+    <string name="mn_action_unarchive">取消归档</string>
+    <string name="mn_group_pinned">置顶</string>
+</resources>

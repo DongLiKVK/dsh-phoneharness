@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  动效令牌 Motion.EASE_DECELERATE —— 减速，**进场默认**。
+  cubic-bezier(0.0, 0.0, 0.2, 1.0)
+  证据：official/jadx-out/sources/defpackage/z24.java:9
+    public static final be3 b = new be3(0.0f, 0.0f, 0.2f, 1.0f);
+  （jadx 把两个 0.0f 渲染成混淆常量引用 l11l111lI1l.l111l1111lI1l，0.2f / 1.0f 为字面量。）
+  方向与本项目 nav_enter.xml 原用的 @android:interpolator/decelerate_cubic 一致。
+  Java 等价实现：Motion.EASE_DECELERATE。
+-->
+<pathInterpolator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:controlX1="0.0"
+    android:controlY1="0.0"
+    android:controlX2="0.2"
+    android:controlY2="1.0" />

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自适应图标背景：与品牌图一致的白底（前景是蓝色鲸尾线稿） -->
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <!-- 设置这类「浅灰底 + 白卡」页面的底色：给系统启动预览窗用，避免先露白再变色（Theme.surfaceAlt） -->
+    <color name="page_bg">#F3F4F6</color>
+    <!-- 选择手柄（水滴）：与品牌色一致，深色下用提亮后的 accent -->
+    <color name="select_handle">#426EFE</color>
+</resources>

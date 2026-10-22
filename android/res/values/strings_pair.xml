@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  PairActivity（连接电脑：地址 + 6 位配对码）的界面文案。
+  中文是基准语言：这里逐字搬运 PairActivity.java 里的原文（含空格、… 形状、
+  中文引号「」与 \n 换行位置），values-en/strings_pair.xml 是对应英文译文。
+  前缀 pr_ = Pair 页接手的这批（避开 strings.xml 与 strings_main.xml 里的既有条目）。
+  仍在 Java 里保留的：地址框占位符 "192.168.x.x:8737"（纯 ASCII，无中文，两种语言同形）。
+-->
+<resources>
+    <!-- 标题与说明 -->
+    <string name="pr_title">连接你的电脑</string>
+    <string name="pr_hint">手机和电脑连同一个 WiFi 就能用，不用装 Tailscale。\n配对码在电脑 DSH 面板的「手机远程」里；地址填电脑的局域网 IP 加端口。</string>
+
+    <!-- 表单 -->
+    <string name="pr_label_host">电脑地址</string>
+    <string name="pr_label_code">配对码</string>
+    <string name="pr_hint_code">6 位数字</string>
+    <string name="pr_connect">连接</string>
+    <string name="pr_probe">只测连通</string>
+    <string name="pr_label_presets">常用地址</string>
+    <string name="pr_tip_has_token">已连接过 %1$s，重新配对会覆盖旧令牌。</string>
+
+    <!-- 状态行 / 提示 -->
+    <string name="pr_status_pinging">正在连 %1$s …</string>
+    <string name="pr_status_ok">通了：%1$s / v%2$s</string>
+    <string name="pr_status_fail">连不上：%1$s</string>
+    <string name="pr_status_pairing">正在配对…</string>
+    <string name="pr_status_pair_fail">配对失败：%1$s</string>
+    <string name="pr_err_code_len">配对码是 6 位数字</string>
+    <string name="pr_toast_connected">连接成功</string>
+</resources>

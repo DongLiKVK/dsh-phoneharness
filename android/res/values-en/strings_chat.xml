@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English strings for ChatActivity (message bubbles / thinking fold / tool rows /
+  approval bar / question card / attachments / read-aloud / toasts).
+  Source of truth is values/strings_chat.xml; keep the same keys and the same
+  placeholder order (%1$s / %1$d).
+-->
+<resources>
+    <string name="ch_title_fallback">Chat</string>
+    <string name="ch_speak_no_reply">No reply to read aloud yet</string>
+    <string name="ch_load_failed_title">Couldn\'t open this chat</string>
+    <string name="ch_load_failed_toast">Couldn\'t load the chat: %1$s</string>
+    <string name="ch_loading_older">Loading earlier messages…</string>
+    <string name="ch_load_older_failed">Load failed: %1$s</string>
+    <string name="ch_reconnecting">Reconnecting…</string>
+    <string name="ch_status_replying">Replying…</string>
+    <string name="ch_status_waiting">Waiting for you</string>
+    <string name="ch_status_failed">Something went wrong</string>
+    <string name="ch_older_count">Load %1$d earlier messages</string>
+    <string name="ch_older_all">Load earlier messages</string>
+    <string name="ch_badge_failed">Failed</string>
+    <string name="ch_share_empty">This message has no text to share</string>
+    <string name="ch_share_no_target">No app to share this with</string>
+    <string name="ch_tool_call_one">1 tool call</string>
+    <string name="ch_tool_calls">%1$d tool calls</string>
+    <string name="ch_tool_unknown">tool</string>
+    <string name="ch_expand">Expand</string>
+    <string name="ch_collapse">Collapse</string>
+    <string name="ch_image_loading">Loading image…</string>
+    <string name="ch_image_failed">Couldn\'t load this image</string>
+    <string name="ch_close">Close</string>
+    <string name="ch_report_thanks">Report received</string>
+    <string name="ch_edit_no_images">The images weren\'t put back into the input — pick them again</string>
+    <string name="ch_speak_empty">This message has nothing to read aloud</string>
+    <string name="ch_speak_engine_starting">The speech engine is still starting up</string>
+    <string name="ch_tts_code_block">code block</string>
+    <string name="ch_copy_empty">This message has nothing to copy</string>
+    <string name="ch_resend_empty">This message has nothing to resend</string>
+    <string name="ch_resend_running">Still generating — wait for this run to finish</string>
+    <string name="ch_resending">Resending…</string>
+    <string name="ch_resend_image_failed">Resend failed — couldn\'t fetch the original images: %1$s</string>
+    <string name="ch_copied">Copied</string>
+    <string name="ch_menu_rename">Rename this chat</string>
+    <string name="ch_menu_refresh">Refresh</string>
+    <string name="ch_menu_copy_id">Copy chat ID</string>
+    <string name="ch_rename_title">Rename chat</string>
+    <string name="ch_save">Save</string>
+    <string name="ch_renamed">Renamed</string>
+    <string name="ch_rename_failed">Rename failed: %1$s</string>
+    <string name="ch_approval_prefix">Wants to run %1$s</string>
+    <string name="ch_approval_allow">Allow</string>
+    <string name="ch_approval_deny">Deny</string>
+    <string name="ch_approval_done">Responded</string>
+    <string name="ch_approval_failed">Response failed: %1$s</string>
+    <string name="ch_question_default">Please choose</string>
+    <string name="ch_answer_done">Answered</string>
+    <string name="ch_answer_failed">Answer failed: %1$s</string>
+    <string name="ch_image_limit">Up to %1$d images per message</string>
+    <string name="ch_reading_image">Reading image…</string>
+    <string name="ch_image_unreadable">Couldn\'t open this image: %1$s</string>
+    <string name="ch_image_placeholder">Image</string>
+    <string name="ch_send_failed">Send failed: %1$s</string>
+    <string name="ch_interrupted">Stopped</string>
+    <string name="ch_interrupt_failed">Couldn\'t stop: %1$s</string>
+    <string name="ch_regenerate_empty">Nothing to regenerate</string>
+    <string name="ch_drawer_title">Chats</string>
+    <string name="ch_drawer_new">New chat</string>
+    <string name="ch_speak_no_engine">No text-to-speech engine on this device</string>
+    <string name="ch_feedback_liked">Liked</string>
+    <string name="ch_feedback_disliked">Marked as not helpful</string>
+    <string name="ch_feedback_cleared">Feedback removed</string>
+    <string name="ch_share_copied">Nothing to share to — copied to clipboard</string>
+</resources>

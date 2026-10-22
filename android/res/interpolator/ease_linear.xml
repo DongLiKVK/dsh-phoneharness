@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  动效令牌 Motion.LINEAR —— 常量速度（进度、装卸载、旋转）。
+  证据：official/jadx-out/sources/defpackage/z24.java:11
+    public static final l33 d = new l33();   // LinearEasing
+  （参考 APK 的缓动全集就是 z24.java:8-11 这四条：standard / decelerate / accelerate / linear。）
+  Java 等价实现：Motion.LINEAR（LinearInterpolator）。
+-->
+<linearInterpolator xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  文案直接沿用 DeepSeek 官方客户端 2.6.1 的中文字符串（res/values-b+zh+Hans/strings.xml），
+  保证措辞、标点、省略号形状与官方一致；app_* 是我们的品牌替换项。
+-->
+<resources>
+    <string name="app_name">PhoneHarness</string>
+    <string name="app_slogan">深水里，聊点真的</string>
+
+    <!-- 会话列表 -->
+    <string name="session_list_empty_title">暂无对话</string>
+    <string name="session_list_empty_description">你与 PhoneHarness 的对话\n将展示在这里</string>
+    <string name="session_group_pinned_collapsed">置顶 %1$d 个对话</string>
+    <string name="session_list_title">对话</string>
+    <string name="session_history_label">历史对话</string>
+    <string name="message_reasoning_marker">思考</string>
+    <string name="message_press_resend">重发</string>
+    <string name="message_press_edit_resend">编辑后重发</string>
+    <string name="message_press_resend_image">重发这张图</string>
+    <string name="message_press_markdown">复制为 Markdown</string>
+    <string name="question_header">DSH 想问你</string>
+    <string name="question_ignore">忽略</string>
+    <string name="question_answer">回答</string>
+    <string name="question_skip_all">全部跳过</string>
+    <string name="approval_allow_once">允许一次</string>
+    <string name="approval_reject">拒绝</string>
+    <string name="session_group_pinned">置顶</string>
+    <string name="session_history_timeline_label_today">今天</string>
+    <string name="session_history_timeline_label_yesterday">昨天</string>
+    <string name="session_history_timeline_label7_days">7 天内</string>
+    <string name="session_history_timeline_label30days">30 天内</string>
+    <string name="session_history_timeline_label_earlier">更早</string>
+    <string name="session_new_chat_button">开启新对话</string>
+    <string name="session_init_title">新对话</string>
+    <string name="session_pin_action">置顶</string>
+    <string name="session_unpin_action">取消置顶</string>
+    <string name="rename_session_action">重命名</string>
+    <string name="rename_session_modal_title">重命名对话</string>
+    <string name="delete_session_action">删除</string>
+    <string name="session_delete_confirm">删除该对话</string>
+    <string name="session_delete_modal">删除后，该对话将不可恢复</string>
+    <string name="session_a_i_alert">本回答由 AI 生成，内容仅供参考，请仔细甄别</string>
+
+    <!-- 输入区 -->
+    <string name="chat_input_placeholder_chat">发消息</string>
+    <string name="chat_input_placeholder_voice">发消息或按住说话</string>
+    <string name="attach_files">上传文件</string>
+    <string name="upload_panel_album">相册</string>
+    <string name="upload_panel_camera">拍照</string>
+    <string name="upload_panel_file">文件</string>
+    <string name="send">发送</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="copy">复制</string>
+    <string name="share">分享</string>
+    <string name="delete">删除</string>
+    <string name="retry">重试</string>
+    <string name="loading">加载中</string>
+    <string name="generating">生成中</string>
+    <string name="sending">发送中</string>
+
+    <!-- 模型与开关 -->
+    <string name="default_model_name">快速模式</string>
+    <string name="expert_model_name">专家模式</string>
+    <string name="vision_model_name">识图模式</string>
+    <string name="message_r1_button">深度思考</string>
+    <string name="message_search_button">智能搜索</string>
+    <string name="file_cannot_with_search_toast">联网搜索不支持上传文件</string>
+    <string name="message_search_with_file_error">请先删除文件再开启联网搜索</string>
+
+    <!-- 消息操作 -->
+    <string name="message_press_copy">复制</string>
+    <string name="message_press_edit">修改</string>
+    <string name="message_press_like">喜欢</string>
+    <string name="message_press_dislike">不喜欢</string>
+    <string name="message_press_regenerate">重新生成</string>
+    <string name="message_press_report">举报</string>
+    <string name="message_continue">继续生成</string>
+    <string name="message_select_text">选择文本</string>
+    <string name="select_text_count">已选 %1$d / 共 %2$d 字</string>
+    <string name="select_text_all">全选</string>
+    <string name="select_text_done">完成</string>
+    <string name="select_text_copied">已复制 %1$d 字</string>
+    <string name="select_text_pick">先选一段文字</string>
+    <string name="select_text_empty">这条消息没有可选择的文字</string>
+    <string name="select_text_hint">长按选词 · 拖动两端手柄调整范围</string>
+    <string name="copy_ok">已复制</string>
+
+    <!-- 状态 -->
+    <string name="message_thinking">正在思考</string>
+    <string name="message_think_duration">已思考（用时 %1$d 秒）</string>
+    <string name="thinking_auto_fold">思考内容自动折叠</string>
+    <string name="expand">展开</string>
+    <string name="collapse">收起</string>
+    <string name="go_to_bottom">转至底部</string>
+
+    <!-- 欢迎语 -->
+    <string name="welcome_message_title_unified">今天有什么可以帮到你？</string>
+    <string name="suggestion_prompt_analyze">分析一下</string>
+    <string name="suggestion_prompt_explain">解释一下</string>
+    <string name="suggestion_prompt_find_answer">答案是什么</string>
+    <string name="suggestion_prompt_suggest_solution">怎么办</string>
+    <string name="suggestion_prompt_summarize">总结</string>
+    <string name="suggestion_prompt_what_is_this">这是什么</string>
+
+    <!-- 设置 -->
+    <string name="profile_title">设置</string>
+    <string name="app_color_scheme">外观</string>
+    <string name="app_color_scheme_dark">深色</string>
+    <string name="app_color_scheme_light">浅色</string>
+    <string name="app_color_scheme_system">系统</string>
+    <string name="font_size">字体大小</string>
+    <string name="default_font_size">标准</string>
+    <string name="search_hint">搜索对话内容...</string>
+    <string name="search_empty_result">暂无相关结果</string>
+
+    <!-- 我们自己的连接/协议文案 -->
+    <string name="pair_title">连接你的电脑</string>
+    <string name="pair_action">连接</string>
+    <string name="pair_probe">只测连通</string>
+
+    <!-- 底部功能区（对齐官方 composer） -->
+    <string name="composer_hint_voice">发消息或按住说话</string>
+    <string name="composer_hold_to_talk">按住说话</string>
+    <string name="composer_release_send">松手发送，上滑取消</string>
+    <string name="composer_release_cancel">松开取消</string>
+    <string name="composer_upload_camera">拍照</string>
+    <string name="composer_upload_album">相册</string>
+    <string name="composer_upload_file">文件</string>
+    <string name="composer_search_note">宿主没有联网检索能力，这个开关只反映界面状态，消息不会联网</string>
+    <string name="composer_voice_note">这台手机没有可用的语音识别服务，请用键盘输入</string>
+    <string name="composer_camera_note">这台手机没有可用的相机</string>
+    <string name="composer_file_note">目前只能发图片，其它类型的文件发不了</string>
+    <!-- 首页（对齐官方新对话页） -->
+    <string name="home_greeting">嗨！今天想聊些什么？</string>
+    <string name="session_new_chat_tooltip">开启新对话</string>
+
+    <!-- 历史抽屉 / 批量多选（官方原文） -->
+    <string name="session_batch_entry_button">多选</string>
+    <string name="select_chat_title">选择对话</string>
+    <string name="session_batch_selected_count">已选择 %1$d 个对话</string>
+    <string name="session_batch_pin_alert">将选择的 %1$d 个对话置顶？</string>
+    <string name="session_batch_pin_success_toast">已置顶 %1$d 个对话</string>
+    <string name="session_batch_delete_alert_title">删除选择的 %1$d 个对话？</string>
+    <string name="session_batch_delete_description">删除后，对话将不可恢复，由该对话生成的分享链接也将失效。</string>
+    <string name="session_batch_delete_success_toast">已删除 %1$d 个对话</string>
+    <string name="session_untitled">新对话</string>
+
+    <!-- 设置页（官方分组与条目原文） -->
+    <string name="profile_info_section_header">账户</string>
+    <string name="account_management">账号管理</string>
+    <string name="data_controls">数据管理</string>
+    <string name="app_section_title">应用</string>
+    <string name="app_language">语言</string>
+    <string name="app_language_value">中文（简体中文）</string>
+    <string name="personalization">个性化</string>
+    <string name="account_audio_input_language_header">语音</string>
+    <string name="voice_switch_bottom_sheet_title">朗读音色</string>
+    <string name="profile_about_section_header">关于</string>
+    <string name="profile_check_for_updates">检查更新</string>
+    <string name="profile_service_agreement">服务协议</string>
+    <string name="profile_help_and_feedback">帮助与反馈</string>
+    <string name="profile_logout">退出登录</string>
+    <string name="follow_system">跟随系统</string>
+
+    <!-- 字体大小页（官方原文） -->
+    <string name="preview_font_size_msg1">预览文字大小</string>
+    <string name="preview_font_size_msg2">你可以拖动滑块来调整字体大小。</string>
+    <string name="preview_font_size_msg3">如果在使用过程中存在问题或建议，可反馈给团队。</string>
+
+    <!-- 朗读（官方原文） -->
+    <string name="read_aloud_start_label">朗读</string>
+    <string name="read_aloud_stop_label">停止朗读</string>
+    <string name="read_aloud_unavailable">本机没有可用的朗读引擎</string>
+
+    <!-- 我们自己的说明文案 -->
+    <string name="settings_connection_header">内容</string>
+    <string name="settings_connection_row">电脑连接</string>
+    <string name="settings_archive_row">归档箱</string>
+    <string name="settings_about_row">关于 PhoneHarness</string>
+
+    <!-- 桌面版 composer 的两个座位：模型 / 推理等级 / 权限（对齐桌面版 Menu） -->
+    <string name="seat_model">模型</string>
+    <string name="seat_effort">推理等级</string>
+    <string name="seat_effort_default">Default</string>
+    <string name="seat_model_empty">请选择模型</string>
+    <string name="seat_search_model_hint">搜索模型</string>
+    <string name="seat_loading_models">正在加载模型…</string>
+    <string name="seat_custom_section">外接模型</string>
+    <string name="seat_add_custom">添加外接模型</string>
+    <string name="seat_field_display_name">显示名称</string>
+    <string name="seat_field_display_name_hint">例如 我的网关</string>
+    <string name="seat_field_route">路由</string>
+    <string name="seat_field_route_hint">小写字母、数字、- 或 _，如 my-gateway</string>
+    <string name="seat_field_base_url">接口地址</string>
+    <string name="seat_field_base_url_hint">https://api.example.com/v1</string>
+    <string name="seat_field_env">密钥环境变量</string>
+    <string name="seat_field_env_hint">如 MYGW_KEY</string>
+    <string name="seat_field_models">模型 ID（逗号分隔）</string>
+    <string name="seat_field_models_hint">如 gpt-4o,qwen-max</string>
+    <string name="seat_field_context">上下文窗口（可留空）</string>
+    <string name="seat_field_context_hint">如 128000</string>
+    <string name="seat_field_max_tokens">最大输出（可留空）</string>
+    <string name="seat_field_max_tokens_hint">如 8192</string>
+    <string name="seat_save">保存</string>
+    <string name="seat_saving">保存中…</string>
+    <string name="seat_added">已添加，选择后立即生效</string>
+    <string name="seat_deleted">已删除</string>
+    <string name="seat_delete_title">删除这个外接模型？</string>
+    <string name="seat_delete_desc">删除路由 %1$s 后，手机和电脑上都不再显示它的模型。</string>
+    <string name="seat_delete_action">删除</string>
+    <string name="seat_err_route">路由只能用小写字母、数字、- 和 _（2-32 位）</string>
+    <string name="seat_err_base_url">接口地址要以 https:// 开头</string>
+    <string name="seat_err_env">密钥环境变量只能用大写字母、数字和下划线</string>
+    <string name="seat_err_models">请填写至少一个合法的模型 ID，用逗号分隔</string>
+    <string name="seat_err_number">这里要填正整数</string>
+    <string name="seat_code_route">路由格式不对（小写字母、数字、- 或 _，2-32 位）</string>
+    <string name="seat_code_base_url">接口地址不合法</string>
+    <string name="seat_code_env">密钥环境变量不合法</string>
+    <string name="seat_code_models">模型 ID 不合法</string>
+    <string name="seat_code_exists">同名路由已存在</string>
+    <string name="seat_code_unavailable">电脑端的模型配置暂时不可写</string>
+    <string name="seat_code_unknown">操作失败，请稍后重试</string>
+    <string name="seat_no_match">没有匹配的模型。</string>
+    <string name="seat_no_models">暂无可用模型。</string>
+    <string name="seat_no_efforts">当前模型未提供推理等级。</string>
+    <string name="seat_provider_account">DeepSeek 账号</string>
+    <string name="perm_read_only">仅可查看</string>
+    <string name="perm_workspace_write">工作区内修改</string>
+    <string name="perm_full_access">完全权限</string>
+    <string name="perm_confirm_title">确认启用完全权限？</string>
+    <string name="perm_confirm_desc">启用完全权限后，智能体将减少确认步骤，并且可以直接执行更多操作，包括敏感操作、文件修改或外部命令。仅建议在你信任当前任务时使用。</string>
+    <string name="perm_confirm_ack">我已了解风险，并愿意继续</string>
+    <string name="perm_enable">启用完全权限</string>
+
+    <!-- 在线主机（原「数据管理」）：一台手机管多台电脑上的 harness -->
+    <string name="hosts_title">在线主机</string>
+    <string name="hosts_subtitle">同时控制多台主机</string>
+    <string name="hosts_online">在线</string>
+    <string name="hosts_offline">离线</string>
+    <string name="hosts_probing">检测中</string>
+    <string name="hosts_current">当前</string>
+    <string name="hosts_add">＋ 添加主机</string>
+    <!-- 用户主机的 Harness：工作区 / Agent 预设（键名冻结，见 docs/harness-contract.md §4） -->
+    <string name="harness_workspace_chip_default">选择工作区</string>
+    <string name="harness_preset_chip_default">选择模式</string>
+    <string name="harness_workspace_panel_title">选择工作区</string>
+    <string name="harness_preset_panel_title">Agent 预设</string>
+    <string name="harness_preset_section_intro">选择 Agent 的工具和工作方式。日常任务用「标准模式」，扩展 DSH 的能力用「创造模式」。</string>
+    <string name="harness_group_builtin">内置</string>
+    <string name="harness_group_custom">自定义</string>
+    <string name="harness_in_use">新任务默认</string>
+    <string name="harness_no_description">暂无描述。</string>
+    <string name="harness_broken_badge">加载失败</string>
+    <string name="harness_use_this_dir">使用此目录</string>
+    <string name="harness_browse_dir">浏览主机目录</string>
+    <string name="harness_manual_path">手动输入路径</string>
+    <string name="harness_parent_dir">上级目录</string>
+    <string name="harness_refresh">刷新</string>
+    <string name="harness_host_label">主机</string>
+    <string name="harness_readonly_warning">主机不接受配置写入，以下只能查看</string>
+    <string name="harness_persist_runtime_only">已生效（本次运行）</string>
+    <string name="harness_switch_refused">无法切换到「%1$s」：%2$s</string>
+    <string name="harness_settings_row">用户主机的 Harness</string>
+    <string name="harness_recent_workspaces">最近工作区</string>
+    <string name="harness_empty_workspaces">还没有可用的工作区</string>
+    <string name="harness_empty_presets">主机没有提供任何 Agent 预设</string>
+    <string name="harness_loading">正在读取主机配置…</string>
+    <string name="harness_retry">重新加载</string>
+    <string name="harness_load_error">读不到主机的配置：%1$s</string>
+    <string name="harness_host_notes">主机提示</string>
+
+    <!-- 新建对话页（工作区 / 预设 chip + 表单校验） -->
+    <string name="new_session_input_hint">给 PhoneHarness 发消息</string>
+    <string name="new_session_workspace_hint">必须是电脑上已存在的目录。点开可以选最近的工作区，或浏览电脑里的目录。</string>
+    <string name="new_session_permission_label">权限</string>
+    <string name="new_session_submit">开始对话</string>
+    <string name="new_session_creating">创建中…</string>
+    <string name="new_session_need_text">先写第一句话</string>
+    <string name="new_session_need_workspace">填工作目录</string>
+    <string name="new_session_no_session_id">服务端没有返回会话 id</string>
+    <string name="new_session_create_failed">创建失败：%1$s</string>
+    <string name="new_session_catalog_failed">读不到模型列表，用服务端默认</string>
+</resources>

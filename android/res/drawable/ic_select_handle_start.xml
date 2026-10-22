@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 选择手柄（左）：水滴形，尖脚朝上指向文字。tint 跟随主题（values / values-night 各一份颜色）。 -->
+<vector android:width="22.0dp" android:height="26.0dp" android:viewportWidth="22.0" android:viewportHeight="26.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:tint="@color/select_handle">
+    <!-- 圆头：半径 8，圆心 (11,16)，底部 24 < 26，不会被 viewport 裁掉 -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M11,8a8,8 0 1,0 0,16a8,8 0 1,0 0,-16z" />
+    <!-- 尖脚朝上指向文字：顶点 (11,1)，底边 (6,12)-(16,12) 落在圆内，两段自然融合成水滴 -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M11,1L16,12L6,12Z" />
+</vector>
