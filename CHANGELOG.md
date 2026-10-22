@@ -4,6 +4,22 @@
 
 插件与 APK 两条版本线独立编号：插件看 `plugin/package.json`，APK 看 `android/AndroidManifest.xml`（`versionName` / `versionCode`）。
 
+## 插件 0.5.20 / APK 0.6.26 — 2026-10-22
+
+### 变更
+
+- **下载下来的 APK 带版本号**。以前无论哪个版本，浏览器存的都是 `dsh-phone.apk`，手机里下过两版就互相覆盖、分不清装的是哪一版。现在按旁车文件里的 `versionName` 命名：
+  - 手机浏览器 `http://<电脑>:8737/apk` → `dsh-phone-0.6.26.apk`
+  - 面板「下载 APK」→ 同上（`plugin/index.js` 的 `sendFile` 走同一个命名函数）
+  - `/apk/meta` 返回的 `name` 字段也带版本，手机端「检查更新」能直接显示文件名
+- 读不到 `versionName`（旁车文件缺失）时退回 `dsh-phone.apk`，不影响下载。
+- Release 资产同步改名：`dsh-phone-0.6.26.apk`、`dsh-phoneharness-0.5.20.tgz`、`SHA256SUMS`（`SHA256SUMS` 里的文件名也跟着改，先 `cd` 到 `release/` 再 `sha256sum -c`）。
+
+### 实测
+
+- 直接调用 `PhoneServer.prototype.sendApk`（假 req / 可写流），返回 `Content-Disposition: attachment; filename="dsh-phone-0.6.26.apk"`、`Content-Length: 752401`，流出字节数与源文件一致。
+- `node scripts/verify.mjs` → 4 项全过（14 文件语法 / cordis 字段 / 26 文件 694 KB / 19 条文档链接）。
+
 ## APK 0.6.26 — 2026-10-22
 
 ### 修复

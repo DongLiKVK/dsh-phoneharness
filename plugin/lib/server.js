@@ -636,10 +636,17 @@ export class PhoneServer {
       sendError(res, 404, 'no_apk', '这个插件包里没有带 APK，请用仓库里的 android/bin/dsh-phone.apk')
       return
     }
+    // 文件名带 APK 版本：手机里下载多个同名包会互相覆盖，分不清装的是哪版。
+    let downloadName = 'dsh-phone.apk'
+    try {
+      const meta = typeof this.options.apkMeta === 'function' ? this.options.apkMeta() : null
+      const name = meta && meta.versionName ? String(meta.versionName).trim() : ''
+      if (name) downloadName = 'dsh-phone-' + name + '.apk'
+    } catch { /* 元数据读不到就用通用名 */ }
     res.writeHead(200, {
       'Content-Type': 'application/vnd.android.package-archive',
       'Content-Length': String(stat.size),
-      'Content-Disposition': 'attachment; filename="dsh-phone.apk"',
+      'Content-Disposition': 'attachment; filename="' + downloadName + '"',
       'Cache-Control': 'no-store',
     })
     const stream = fs.createReadStream(file)

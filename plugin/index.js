@@ -26,7 +26,7 @@ import { sendError, sendJson } from './lib/http.js'
 import { UpdateChecker, DEFAULT_INTERVAL_MS, MIN_INTERVAL_MS } from './lib/update.js'
 import { Identity } from './lib/identity.js'
 
-const VERSION = '0.5.19'
+const VERSION = '0.5.20'
 /** 开源仓库地址（占位：换仓库时只改这一行，面板与文档都跟着走）。 */
 const REPO_URL = 'https://github.com/DongLiKVK/dsh-phoneharness'
 const CONTROL = '/dsh-phone/api'
@@ -105,6 +105,13 @@ function lanAddresses() {
  */
 let apkMemo = null
 
+/** 下载时用的文件名：dsh-phone-<versionName>.apk；读不到版本就退回通用名。 */
+function apkDownloadName(file) {
+  const meta = apkMeta(file)
+  const name = meta && meta.versionName ? String(meta.versionName).trim() : ''
+  return name ? 'dsh-phone-' + name + '.apk' : 'dsh-phone.apk'
+}
+
 function apkMeta(file) {
   try {
     const stat = fs.statSync(file)
@@ -113,7 +120,7 @@ function apkMeta(file) {
     let side = {}
     try { side = JSON.parse(fs.readFileSync(file + '.json', 'utf8')) } catch { side = {} }
     const meta = {
-      name: 'dsh-phone.apk',
+      name: side.versionName ? 'dsh-phone-' + side.versionName + '.apk' : 'dsh-phone.apk',
       size: stat.size,
       md5,
       builtAt: new Date(stat.mtimeMs).toISOString(),
@@ -463,7 +470,8 @@ function sendFile(res, file) {
   res.writeHead(200, {
     'Content-Type': 'application/vnd.android.package-archive',
     'Content-Length': String(stat.size),
-    'Content-Disposition': 'attachment; filename="dsh-phone.apk"',
+    // 下载下来的文件名带上 APK 版本，否则手机里堆着一堆 dsh-phone.apk 分不清谁是谁。
+    'Content-Disposition': 'attachment; filename="' + apkDownloadName(file) + '"',
     'Cache-Control': 'no-store',
   })
   const stream = fs.createReadStream(file)

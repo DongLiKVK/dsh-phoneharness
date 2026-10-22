@@ -57,7 +57,7 @@ phone-harness: 手机可连 http://<本机IP>:8737（配对码 123456）
 
 面板里**不再提供下载入口**（0.4.4 起移除，避免把手机包的分发绑在某台开机的电脑上），装包改走：
 
-- **GitHub Releases**（推荐）：从项目 Releases 页下载 `dsh-phone.apk`；
+- **GitHub Releases**（推荐）：从项目 Releases 页下载 `dsh-phone-<versionName>.apk`（当前 `dsh-phone-0.6.26.apk`）；
 - **本地直连**：手机浏览器打开 `http://<电脑IP>:8737/apk`（路由仍在，只是面板不链接它）。
 
 APK 在 `plugin/assets/dsh-phone.apk`（152,474 字节 / md5 `0962877b9ee7edb1e1aafd45ca8d6855`，
