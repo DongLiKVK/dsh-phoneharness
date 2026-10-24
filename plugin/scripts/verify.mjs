@@ -46,10 +46,18 @@ try {
   const out = execFileSync('npm', ['pack', '--dry-run', '--json'], { cwd: root, stdio: 'pipe', shell: process.platform === 'win32' })
   const info = JSON.parse(String(out))[0]
   const files = new Set(info.files.map((entry) => entry.path))
-  for (const required of ['index.js', 'client.js', 'cordis.patch.yml', 'assets/dsh-phone.apk', 'README.md']) {
-    if (!files.has(required)) bad('打包缺文件：' + required)
+  // APK 是发版时注入的构建产物（不进 git）：有就检查，没有只提示，不算失败。
+  const hasApk = existsSync(join(root, 'assets', 'dsh-phone.apk'))
+  const required = ['index.js', 'client.js', 'cordis.patch.yml', 'README.md']
+  if (hasApk) required.push('assets/dsh-phone.apk')
+  for (const name of required) {
+    if (!files.has(name)) bad('打包缺文件：' + name)
   }
-  if (!files.has('assets/dsh-phone.apk.json')) bad('打包缺 assets/dsh-phone.apk.json（面板靠它显示 APK 版本）')
+  if (hasApk) {
+    if (!files.has('assets/dsh-phone.apk.json')) bad('打包缺 assets/dsh-phone.apk.json（面板靠它显示 APK 版本）')
+  } else {
+    console.log('  warn 没找到 assets/dsh-phone.apk（发版前把 android/bin/dsh-phone.apk 拷进来），跳过 APK 两项打包检查')
+  }
   if (!problems.length) ok(info.files.length + ' files, ' + Math.round(info.size / 1024) + ' KB')
 } catch (error) { bad('npm pack 失败：' + String(error.stderr || error.message).split('\n')[0]) }
 

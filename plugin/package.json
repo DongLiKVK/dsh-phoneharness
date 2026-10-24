@@ -1,6 +1,6 @@
 {
   "name": "dsh-phoneharness",
-  "version": "0.5.20",
+  "version": "0.5.21",
   "private": false,
   "type": "module",
   "description": "用手机 APK 远程控制本机 DeepSeek Harness：自建对外 HTTP/SSE 端口 + 一次性配对码，手机上发指令、看时间线、答审批。",

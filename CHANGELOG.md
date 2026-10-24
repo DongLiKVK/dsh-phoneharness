@@ -4,6 +4,30 @@
 
 插件与 APK 两条版本线独立编号：插件看 `plugin/package.json`，APK 看 `android/AndroidManifest.xml`（`versionName` / `versionCode`）。
 
+## 插件 0.5.21 / APK 0.6.29 — 2026-10-24
+
+### 新增
+
+- **APK 内置 Tailscale 引擎（tsnet）**：APK `0.6.29`（versionCode 45，46,025,305 字节）自带 `libgojni.so`（arm64-v8a + x86_64），手机不用另装 Tailscale 就能加入 tailnet、用 `100.x` 访问电脑。Java 侧照旧用 `HttpURLConnection`，只在目标是 `100.64.0.0/10` 时挂一个本机 `127.0.0.1` 代理，由 tsnet（用户态 WireGuard + netstack）直连。设置页新增「内网互联」：登录 / 退出、两种退出口径（只退 Tailscale / 连同配对一起断开）、AuthURL 打开登录页。
+- **插件运行期重绑**：`lib/server.js` 拆出 `listenOn(bind)` / `rebind(addresses)` 并维护 `bound` 集合；`index.js` 每 15 秒跑一次 `rebindTick()`，只补「期望地址里还没监听」的那几条（`0.0.0.0` 兜底不参与），补上后回写 `endpoint.json` 的 `binds` / `updatedAt`。修的是 Windows 上 tailscaled 比宿主后起、`binds` 永久少一条 `100.x`、手机登录完也连不上电脑的问题。
+
+### 变更
+
+- 插件 0.5.20 → **0.5.21**：重绑补丁直接叠在 0.5.20 上（`0.5.20` 的「下载 APK 带版本号」保留）。0.5.15 那次只把重绑打进工作区、没有随包发布，本版起仓库源码与 Release 里的 tgz 一致。
+- 发布形态变化：产物**只挂 GitHub Release 资产**（`dsh-phone-0.6.29.apk`、`dsh-phoneharness-0.5.21.tgz`、`SHA256SUMS`）。仓库里不再提交二进制：`release/` 只留发布说明、校验和与 `.apk.json` 元数据；`plugin/assets/dsh-phone.apk` 由发版流程在 `npm pack` 前注入（见 [plugin/assets/README.md](plugin/assets/README.md)）。APK 46 MB、插件包 17 MB，进 git 会让仓库膨胀到 60 MB 以上。
+
+### 两条版本线
+
+APK `0.6.29` 出自「内置 Tailscale」这条开发线，界面基线是 `0.6.18`；本仓库 `android/` 源码仍是 `0.6.26` 线（聊天页操作条、抽屉检索等）。所以这个 APK **带 Tailscale、但没有 0.6.19–0.6.26 的聊天页改动**。按需二选一：
+
+- 要手机端直接连 tailnet → 装本 Release 的 `dsh-phone-0.6.29.apk`；
+- 要聊天页操作条 / 抽屉检索 → 装上个 Release `v0.5.20` 里的 `dsh-phone-0.6.26.apk`。
+
+### 实测
+
+- APK 0.6.29：`android/bin/dsh-phone.apk` 46,025,305 字节，md5 `4e55f8d45fae5cc7fbb8d436e8e7f2b5`，sha256 `cfb8c924…b68bd6`；versionName `0.6.29` / versionCode `45`。tsnet 真机问题（SELinux 拒绝 AF_NETLINK → Java 侧网卡快照、反射漏传参数类型）已在 `0.6.28` 修掉，`0.6.29` 修配对页任务根与返回键两次退出。
+- 插件 0.5.21：`node --check` 全过、`npm run verify` 4 项全过；tgz 17,026,956 字节（内含同一份 APK，md5 一致），sha256 `6cf7f881…08fd6`。
+
 ## 插件 0.5.20 / APK 0.6.26 — 2026-10-22
 
 ### 变更

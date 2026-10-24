@@ -21,5 +21,8 @@ Thumbs.db
 /official/
 /dsh-src/
 
-# Release 目录里的产物是要发布的，别忽略
-!/release/
+# 发布产物（APK / 插件 tgz）只挂 GitHub Release 资产，不进 git
+/plugin/assets/*.apk
+/plugin/assets/*.apk.json
+/release/*.apk
+/release/*.tgz
