@@ -151,6 +151,8 @@ export class PhoneServer {
     this.clients = new Set()
     this.server = null
     this.servers = []
+    /** 已经在监听的地址：运行期补绑（见 rebind）靠它判断哪些还没绑。 */
+    this.bound = new Set()
     this.port = 0
     this.lastError = null
     this.unsubscribe = null
@@ -162,28 +164,8 @@ export class PhoneServer {
     const binds = (configured.length ? configured : [String(this.options.bind || '0.0.0.0')])
       .filter((entry) => typeof entry === 'string' && entry.trim())
     this.servers = []
-    for (const bind of binds) {
-      const server = http.createServer((req, res) => {
-        void this.handle(req, res).catch((error) => {
-          try { sendError(res, ...describe(error)) } catch { /* 已断开 */ }
-        })
-      })
-      server.headersTimeout = 30000
-      server.requestTimeout = 60000
-      const ok = await new Promise((resolve) => {
-        const done = (value) => resolve(value)
-        server.once('error', (error) => {
-          this.lastError = bind + ' ' + String((error && error.message) || error)
-          try { server.close() } catch { /* 没起来 */ }
-          done(false)
-        })
-        server.listen(this.port || this.options.port, bind, () => {
-          this.port = server.address().port
-          done(true)
-        })
-      })
-      if (ok) this.servers.push(server)
-    }
+    this.bound = new Set()
+    for (const bind of binds) await this.listenOn(bind)
     this.server = this.servers[0] || null
     if (!this.port) return null
     this.unsubscribe = this.runtime.subscribe((payload) => this.broadcast(payload))
@@ -196,6 +178,52 @@ export class PhoneServer {
     heartbeat.unref?.()
     this.heartbeat = heartbeat
     return this.port
+  }
+
+  /**
+   * 在一个地址上开一个 server，端口沿用已经绑上的那个。
+   *
+   * 抽出来是为了运行期补绑：插件启动那一刻 Tailscale 网卡往往还没有 100.x
+   * （tailscaled 比宿主后起），不补绑的话手机登录完也连不上。
+   */
+  async listenOn(bind) {
+    if (!bind || this.bound.has(bind)) return false
+    const server = http.createServer((req, res) => {
+      void this.handle(req, res).catch((error) => {
+        try { sendError(res, ...describe(error)) } catch { /* 已断开 */ }
+      })
+    })
+    server.headersTimeout = 30000
+    server.requestTimeout = 60000
+    const ok = await new Promise((resolve) => {
+      server.once('error', (error) => {
+        this.lastError = bind + ' ' + String((error && error.message) || error)
+        try { server.close() } catch { /* 没起来 */ }
+        resolve(false)
+      })
+      server.listen(this.port || this.options.port, bind, () => {
+        this.port = server.address().port
+        resolve(true)
+      })
+    })
+    if (!ok) return false
+    this.servers.push(server)
+    this.bound.add(bind)
+    if (!this.server) this.server = server
+    return true
+  }
+
+  /** 运行期补绑：只给「还没监听」的地址各开一个 server。 */
+  async rebind(addresses) {
+    const added = []
+    const failed = []
+    for (const address of Array.isArray(addresses) ? addresses : []) {
+      if (!address || this.bound.has(address)) continue
+      const ok = await this.listenOn(address)
+      if (ok) added.push(address)
+      else failed.push({ address, error: this.lastError })
+    }
+    return { added, failed }
   }
 
   broadcast(payload) {
@@ -719,6 +747,7 @@ export class PhoneServer {
     this.clients.clear()
     const servers = this.servers.length ? this.servers : (this.server ? [this.server] : [])
     this.servers = []
+    this.bound = new Set()
     this.server = null
     if (!servers.length) return
     await Promise.all(servers.map((server) => new Promise((resolve) => server.close(() => resolve(undefined)))))

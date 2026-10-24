@@ -26,12 +26,14 @@ import { sendError, sendJson } from './lib/http.js'
 import { UpdateChecker, DEFAULT_INTERVAL_MS, MIN_INTERVAL_MS } from './lib/update.js'
 import { Identity } from './lib/identity.js'
 
-const VERSION = '0.5.20'
+const VERSION = '0.5.21'
 /** 开源仓库地址（占位：换仓库时只改这一行，面板与文档都跟着走）。 */
 const REPO_URL = 'https://github.com/DongLiKVK/dsh-phoneharness'
 const CONTROL = '/dsh-phone/api'
 const DEFAULT_PORT = 8737
 const DEFAULT_TTL = 10 * 60 * 1000
+/** 运行期重绑的巡检间隔：Tailscale 网卡后起时，靠它把 100.x 补绑上（见 rebindTick）。 */
+const REBIND_MS = 15000
 /** 插件自带一份 APK，面板上直接给下载链接，省得手机再去找文件。 */
 const APK_FILE = path.join(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), 'assets', 'dsh-phone.apk')
 
@@ -298,6 +300,51 @@ export function apply(ctx, config) {
 
   ctx.effect(() => {
     let stopped = false
+    let watcher = null
+    const startedAt = new Date().toISOString()
+
+    const writeEndpoint = () => {
+      if (!server.port) return
+      try {
+        fs.writeFileSync(endpointFile, JSON.stringify({
+          version: 1,
+          host: settings.bind,
+          binds,
+          port: server.port,
+          name: machineName(),
+          lan: lanAddresses(),
+          pid: process.pid,
+          startedAt,
+          updatedAt: new Date().toISOString(),
+        }, null, 2), { mode: 0o600 })
+      } catch { /* 写不了就不写 */ }
+    }
+
+    /**
+     * 运行期重绑。
+     *
+     * 宿主启动那一刻 tailscaled 往往还没把 100.x 配到网卡上，resolveBind 算出来的
+     * binds 就永久少了 tailnet 地址 —— 手机登录之后按 100.x 仍然连不上电脑。
+     * 这里每 15 秒重算一次「期望地址」，只补还没监听的那几条；0.0.0.0 兜底不参与
+     * 补绑，免得把收窄过的监听面又放开。
+     */
+    const rebindTick = async () => {
+      if (stopped || !server.port) return
+      const wanted = resolveBind(settings.bind)
+        .filter((address) => address !== '0.0.0.0' && address !== '::')
+      const missing = wanted.filter((address) => !server.bound.has(address))
+      if (!missing.length) return
+      const result = await server.rebind(missing)
+      if (result.failed.length) {
+        // 最常见的失败是 EADDRINUSE：这条地址已被别的进程占着（比如 netsh portproxy 转发）。
+        ctx.logger?.warn?.('dsh-phoneharness: 补绑 %s 失败：%s', result.failed.map((item) => item.address).join(', '), String(result.failed[0].error || ''))
+      }
+      if (!result.added.length) return
+      for (const address of result.added) if (!binds.includes(address)) binds.push(address)
+      writeEndpoint()
+      ctx.logger?.info?.('dsh-phoneharness: 补绑 %s（新地址上线）', result.added.join(', '))
+    }
+
     approvals.start()
     questions.start()
     void server.start().then((port) => {
@@ -306,22 +353,16 @@ export function apply(ctx, config) {
         ctx.logger?.warn?.('dsh-phoneharness: 端口 %s 打开失败：%s', String(settings.port), String(server.lastError || 'unknown'))
         return
       }
-      try {
-        fs.writeFileSync(endpointFile, JSON.stringify({
-          version: 1,
-          host: settings.bind,
-          binds,
-          port,
-          name: machineName(),
-          lan: lanAddresses(),
-          pid: process.pid,
-          startedAt: new Date().toISOString(),
-        }, null, 2), { mode: 0o600 })
-      } catch { /* 写不了就不写 */ }
+      writeEndpoint()
       ctx.logger?.info?.('dsh-phoneharness: 监听 %s :%s（配对码 %s）', binds.join(', '), String(port), pairing.code)
+      void rebindTick().catch(() => {})
+      // 定时器要 unref，否则会拖住宿主进程不退出。
+      watcher = setInterval(() => { void rebindTick().catch(() => {}) }, REBIND_MS)
+      watcher.unref?.()
     })
     return () => {
       stopped = true
+      if (watcher) clearInterval(watcher)
       void questions.close()
       void approvals.close()
       void server.stop()

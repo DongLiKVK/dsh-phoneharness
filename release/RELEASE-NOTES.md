@@ -1,40 +1,41 @@
-# Release 插件 0.5.20 / APK 0.6.26
+# Release 插件 0.5.21 / APK 0.6.29
 
-本轮改动集中在对话页的操作条（每条助手消息底部的 复制 / 赞 / 踩 / 朗读 / 分享 / 重新生成）。
+本轮把两条线的最新产物一起发：APK 侧是「内置 Tailscale 引擎」的 `0.6.29`，插件侧是 0.5.20 叠加「运行期重绑」的 `0.5.21`。
 
-## 修了什么
-
-操作条原本只挂在「有正文的助手消息」上。而 agent 型会话一轮里绝大多数条目是工具调用与思考标记（实测样本 191 条：工具调用 132、思考标记 55、助手正文 2），这些轮次整轮没有正文，操作条不出现 —— 表现为「这几个按钮对我生成的内容没效果」。
-
-- 新增 `BarTarget`：一条消息、或一整块「思考 + 工具调用」聚合区，都能包成同一个操作条作用对象。
-- 纯工具轮次的聚合块在自己底部挂操作条；有正文时仍由正文带，保证一轮不出现两条。
-- 「是不是本轮最后一块」的判定跳过 `role=system` 的收尾标记（「处理完成」小胶囊），否则 agent 轮次永远算不上尾块。
-- `重新生成` 改为按操作条所在那一轮定位用户消息（不再固定取全局最后一条）；只加载了后半段时退回原行为。
-- 长按消息菜单走同一套 `BarTarget`，与操作条行为一致。
-
-## 文件名带版本
-
-以前无论哪个版本，下载下来都叫 `dsh-phone.apk`，手机里存过两版就互相覆盖、分不清装的是哪一版。现在 APK 一律带版本号：
-
-- Release 资产：`dsh-phone-0.6.26.apk`
-- 手机浏览器直连 `http://<电脑>:8737/apk`：同样存成 `dsh-phone-0.6.26.apk`（`Content-Disposition` 由旁车文件里的 `versionName` 生成）
-- 插件面板「下载 APK」：同上
-- `/apk/meta` 的 `name` 字段也带版本，手机端检查更新时能直接看到文件名
-
-## 产物
+## 产物（Release 资产）
 
 | 文件 | 说明 |
 | --- | --- |
-| `dsh-phone-0.6.26.apk` | Android 客户端，versionName `0.6.26` / versionCode `42`，752401 字节 |
-| `dsh-phoneharness-0.5.20.tgz` | 宿主插件包 0.5.20（`dsh plugin add file:<tgz>`） |
+| `dsh-phone-0.6.29.apk` | Android 客户端，versionName `0.6.29` / versionCode `45`，46,025,305 字节，内置 tsnet |
+| `dsh-phoneharness-0.5.21.tgz` | 宿主插件包 0.5.21（17,026,956 字节，内含同一份 APK），`dsh plugin add file:<tgz>` |
 | `SHA256SUMS` | 上面两个文件的校验和 |
 
-APK 用仓库里的 `android/debug.keystore`（标准 androiddebugkey）签名，可直接覆盖安装；`plugin/assets/dsh-phone.apk` 仍是仓库内的固定路径（插件靠这个路径找包），只是**下载时**才改名成带版本的文件名。
+校验：先 `cd` 到下载目录，再 `sha256sum -c SHA256SUMS`。
+
+## APK 0.6.29：内置 Tailscale
+
+- 自带 `libgojni.so`（tsnet，arm64-v8a + x86_64）：**不用另装 Tailscale App**，手机就能加入 tailnet、用 `100.x` 地址连电脑。
+- Java 侧仍是 `HttpURLConnection`，只在目标是 `100.64.0.0/10` 时挂本机 `127.0.0.1` 代理，由 tsnet（用户态 WireGuard + netstack）直连。
+- 设置页新增「内网互联」：登录 / 退出、两种退出口径（只退 Tailscale / 连同配对一起断开）、AuthURL 打开登录页。
+- `0.6.28` 修掉真机上的 tsnet 问题（SELinux 拒绝 AF_NETLINK → 改用 Java 侧网卡快照；反射漏传参数类型）；`0.6.29` 修配对页任务根与「返回键按两次才退出」。
+
+> **两条版本线**：`0.6.29` 的界面基线是 `0.6.18`，**没有** `0.6.19`–`0.6.26` 的聊天页改动（操作条 `BarTarget`、抽屉检索等）。
+> 想要那些功能，请装上个 Release `v0.5.20` 里的 `dsh-phone-0.6.26.apk`。
+
+## 插件 0.5.21：运行期重绑
+
+- `lib/server.js`：新增 `listenOn(bind)` / `rebind(addresses)`，用 `bound` 集合记已监听地址；`start()` 与重绑共用同一条监听路径（`headersTimeout 30000` / `requestTimeout 60000`，EADDRINUSE 记 `lastError`）。
+- `index.js`：`rebindTick()` 每 15 秒跑一次（`REBIND_MS = 15000`），只补「期望地址里还没监听」的那几条，`0.0.0.0` 兜底不参与；补上后回写 `endpoint.json` 的 `binds` / `updatedAt`。
+- 修的问题：Windows 上 tailscaled 常比宿主后起，插件启动时 `100.x` 还不存在 → `binds` 永久少一条，手机登录完了也连不上电脑。
+- 保留 0.5.20 的「下载 APK 文件名带版本号」。
+
+## 仓库约定变化：二进制不进 git
+
+- `plugin/assets/dsh-phone.apk` 与 `.apk.json` 由发版流程在 `npm pack` 前注入（见 `plugin/assets/README.md`）。仓库里没有它们时 `GET /apk` 返回 `404 no_apk`，`npm run verify` 跳过 APK 两项打包检查并打一行 `warn`。
+- `release/` 只留本说明、`SHA256SUMS` 与 APK 的 `.apk.json` 元数据。
 
 ## 验证
 
-- 下载文件名实测：直接驱动 `PhoneServer.prototype.sendApk`（假 req + 可写流），响应头 `Content-Disposition: attachment; filename="dsh-phone-0.6.26.apk"`、`Content-Length: 752401`，实际流出字节数与源文件一致。
-- 守门脚本 `node plugin/scripts/verify.mjs` → 4 项全过（14 文件语法 / cordis 字段含 version 0.5.20 / npm pack 26 文件 694 KB / 19 条文档链接）。
-- 回归脚本：`node tools/verify-harness.mjs` → PASS=34 FAIL=0（未验证 6 项为需要真实设备的交互，见脚本输出）。
-- 夹具复现：`tools/fixtures/round-tool-only.json` 描述一段纯工具轮次，推到设备缓存目录即可离线复现。
-- 逐动作点击验证：复制出「已复制」、赞转主题蓝并出「已点赞」、朗读在无 TTS 引擎时出「本机没有可用的朗读引擎」、重新生成回填上一条提问、`force-stop` 重启后赞仍保持。
+- `node --check`：`index.js`、`client.js`、`lib/*.js`、`scripts/*.mjs` 全过。
+- `node plugin/scripts/verify.mjs` → 4 项全过（npm pack 27 文件 / 文档相对链接全在）。
+- 包内 APK 一致性：tgz 里 `package/assets/dsh-phone.apk` 的 md5 `4e55f8d45fae5cc7fbb8d436e8e7f2b5`，与 `android/bin/dsh-phone.apk` 完全相同；`SHA256SUMS` 里的 sha256 由这两个产物直接算出。
