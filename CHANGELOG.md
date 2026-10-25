@@ -4,6 +4,28 @@
 
 插件与 APK 两条版本线独立编号：插件看 `plugin/package.json`，APK 看 `android/AndroidManifest.xml`（`versionName` / `versionCode`）。
 
+## 插件 0.5.22 / APK 0.6.92 — 2026-10-25
+
+### 变更
+
+- **换发新 APK `0.6.92`（versionCode 114，46,058,367 字节）**：同一条线（内置 tsnet Tailscale）从 `0.6.29` 往后连续迭代的产物，界面基线仍是 `0.6.18`。md5 `0aca941cd056e7c4dc4717959db52f19`、sha256 `93b827e8…723a8eba`；`AndroidManifest.xml` 里解析出的 `versionName` / `versionCode` 与旁车 `.apk.json` 一致，zip 内 13 个大条目 CRC32 全过。
+- 插件 `0.5.21 → 0.5.22`：**插件代码一行没改**，只是包内随附的 APK 换成 `0.6.92`（tgz 里 `package/assets/dsh-phone.apk` 与 Release 上的 APK 是同一份），版本号跟一位，方便区分下到的是哪个包。
+- 发布形态不变：二进制只挂 Release 资产（`dsh-phone-0.6.92.apk`、`dsh-phoneharness-0.5.22.tgz`、`SHA256SUMS`）；仓库里只留 `release/dsh-phone-0.6.92.apk.json` 元数据，`release/dsh-phone-0.6.29.apk.json` 随本版删除。
+- 体积说明：43.92 MB 里 43.1 MB 是两份 `libgojni.so`（`arm64-v8a` 20.79 MB + `x86_64` 22.35 MB），`classes.dex` 只有 0.21 MB。GitHub 单文件上限 100 MB，能直接当 Release 资产；进 git 会让仓库永久膨胀，所以照旧不入库。
+
+### APK 0.6.29 → 0.6.92 的改动（开发树 CHANGELOG，按版本）
+
+- `0.6.30` 会话页顶栏去掉最右侧 ⋯；`0.6.31` 列表绿点语义从「跑完了」改成「跑完了但你没看过」（`ReadMarks.unread` 本地账本）；`0.6.37` 抽屉账号行去掉「主机 · 设备」副标题、点输入框外面收键盘；`0.6.46` 设置页「工作区」换文件夹线稿图标。
+- `0.6.47` 对话页抽屉也有多选（抽出 `BatchSelect.java` 供两处宿主共用）；`0.6.49` 顶栏预设标签改读**这条会话自己的**预设（原先写死主机全局默认，永远显示「PTC 模式」）；`0.6.50` 长内容统一 `Theme.scrollbar()`（3dp、贴右缘、不淡出）。
+- `0.6.53` 抽屉打开时列表归位（滚动位置与子视图 `translationY` 抹平）；`0.6.55` 长按拖文件夹前先自动折叠；`0.6.66` 文件夹不能拖到「工作区」标题以上；`0.6.74` 修「拖动时越过标题区整片白板」（真因是 `FolderDrag` 往列表 `LinearLayout` 自己身上滚，负 scrollY 到 −8856，改为一律只滚外层 `ScrollView`）。
+- `0.6.76` 长按拖动去掉蓝色描边 + 加半格死区（解决「手一抖就换位」）；`0.6.77` 新对话落点跟着「刚打开的那条会话」的文件夹走（`adoptTarget`）；`0.6.80` 顶栏橙色方块（中断按钮）移除，停止能力搬到输入框动作键；`0.6.81` 「正在回复…」文字改成标题左侧常驻槽里的转圈（`StateRing`，槽常驻避免标题左右跳）；`0.6.82` 修上传面板三格图标与文字错位（竖直 `LinearLayout` 默认 LP 宽度是 MATCH_PARENT）；`0.6.88` 当前会话那一行加了 ⋯ 会话菜单（重命名 / 置顶 / 多选 / 删除）。
+- `0.6.89`–`0.6.92` 开发树 CHANGELOG 未记（最后一次文档更新早于构建时间 `2026-10-25T09:03:34Z`），本版以 `versionName` / `versionCode` / 字节数 / sha256 为身份判据。
+
+### 实测
+
+- 版本核对：APK 内 `AndroidManifest.xml` 解析出 `versionName 0.6.92` / `versionCode 114`，与旁车 json 一致；13 个大条目 CRC32 全过，0 失败。
+- 发版流程按 [`plugin/assets/README.md`](plugin/assets/README.md)：`cp android/bin/dsh-phone.apk*` 到 `plugin/assets/` → `npm pack` → 三个资产上传 Release。
+
 ## 插件 0.5.21 / APK 0.6.29 — 2026-10-24
 
 ### 新增

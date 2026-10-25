@@ -26,7 +26,7 @@ import { sendError, sendJson } from './lib/http.js'
 import { UpdateChecker, DEFAULT_INTERVAL_MS, MIN_INTERVAL_MS } from './lib/update.js'
 import { Identity } from './lib/identity.js'
 
-const VERSION = '0.5.21'
+const VERSION = '0.5.22'
 /** 开源仓库地址（占位：换仓库时只改这一行，面板与文档都跟着走）。 */
 const REPO_URL = 'https://github.com/DongLiKVK/dsh-phoneharness'
 const CONTROL = '/dsh-phone/api'
