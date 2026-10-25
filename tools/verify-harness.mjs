@@ -211,7 +211,7 @@ const normPath = (value) => String(value == null ? '' : value).replace(/[\\/]+$/
 
 /**
  * 路径归一化：优先 fs.realpathSync.native（JS 版 realpath 不还原 8.3 短名 ——
- * os.tmpdir() 在这台机器会给 C:\Users\<USERNAME>~1\…，服务端返回的是长名，
+ * os.tmpdir() 在这台机器会给 <USERPROFILE>\…，服务端返回的是长名，
  * 两边直接比会假 FAIL）。
  */
 const realishPath = (value) => {
